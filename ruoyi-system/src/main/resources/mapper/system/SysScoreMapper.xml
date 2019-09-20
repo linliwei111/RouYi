@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.system.mapper.SysScoreMapper">
+    
+    <resultMap type="SysScore" id="SysScoreResult">
+        <result property="studentId"    column="student_id"    />
+        <result property="studentName"    column="student_name"    />
+        <result property="couseName"    column="couse_name"    />
+        <result property="score"    column="score"    />
+    </resultMap>
+
+    <sql id="selectSysScoreVo">
+        select student_id, student_name, couse_name, score from sys_score
+    </sql>
+
+    <select id="selectSysScoreList" parameterType="SysScore" resultMap="SysScoreResult">
+        <include refid="selectSysScoreVo"/>
+        <where>  
+            <if test="studentId != null "> and student_id = #{studentId}</if>
+            <if test="studentName != null  and studentName != ''"> and student_name like concat('%', #{studentName}, '%')</if>
+            <if test="couseName != null  and couseName != ''"> and couse_name like concat('%', #{couseName}, '%')</if>
+            <if test="score != null "> and score = #{score}</if>
+        </where>
+    </select>
+    
+    <select id="selectSysScoreById" parameterType="Long" resultMap="SysScoreResult">
+        <include refid="selectSysScoreVo"/>
+        where student_id = #{studentId}
+    </select>
+        
+    <insert id="insertSysScore" parameterType="SysScore" useGeneratedKeys="true" keyProperty="studentId">
+        insert into sys_score
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="studentName != null  and studentName != ''">student_name,</if>
+            <if test="couseName != null  and couseName != ''">couse_name,</if>
+            <if test="score != null ">score,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="studentName != null  and studentName != ''">#{studentName},</if>
+            <if test="couseName != null  and couseName != ''">#{couseName},</if>
+            <if test="score != null ">#{score},</if>
+         </trim>
+    </insert>
+
+    <update id="updateSysScore" parameterType="SysScore">
+        update sys_score
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="studentName != null  and studentName != ''">student_name = #{studentName},</if>
+            <if test="couseName != null  and couseName != ''">couse_name = #{couseName},</if>
+            <if test="score != null ">score = #{score},</if>
+        </trim>
+        where student_id = #{studentId}
+    </update>
+
+    <delete id="deleteSysScoreById" parameterType="Long">
+        delete from sys_score where student_id = #{studentId}
+    </delete>
+
+    <delete id="deleteSysScoreByIds" parameterType="String">
+        delete from sys_score where student_id in 
+        <foreach item="studentId" collection="array" open="(" separator="," close=")">
+            #{studentId}
+        </foreach>
+    </delete>
+    
+</mapper>

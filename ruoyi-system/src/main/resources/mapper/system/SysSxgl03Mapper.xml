@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.system.mapper.SysSxgl03Mapper">
+    
+    <resultMap type="SysSxgl03" id="SysSxgl03Result">
+        <result property="id"    column="id"    />
+        <result property="名称"    column="名称"    />
+        <result property="内容"    column="内容"    />
+        <result property="链接"    column="链接"    />
+        <result property="类型"    column="类型"    />
+        <result property="分值"    column="分值"    />
+        <result property="模式"    column="模式"    />
+    </resultMap>
+
+    <sql id="selectSysSxgl03Vo">
+        select id, 名称, 内容, 链接, 类型, 分值, 模式 from sys_sxgl03
+    </sql>
+
+    <select id="selectSysSxgl03List" parameterType="SysSxgl03" resultMap="SysSxgl03Result">
+        <include refid="selectSysSxgl03Vo"/>
+        <where>  
+            <if test="名称 != null  and 名称 != ''"> and 名称 = #{名称}</if>
+            <if test="内容 != null  and 内容 != ''"> and 内容 = #{内容}</if>
+            <if test="链接 != null  and 链接 != ''"> and 链接 = #{链接}</if>
+            <if test="类型 != null  and 类型 != ''"> and 类型 = #{类型}</if>
+            <if test="分值 != null  and 分值 != ''"> and 分值 = #{分值}</if>
+            <if test="模式 != null  and 模式 != ''"> and 模式 = #{模式}</if>
+        </where>
+    </select>
+    
+    <select id="selectSysSxgl03ById" parameterType="Long" resultMap="SysSxgl03Result">
+        <include refid="selectSysSxgl03Vo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertSysSxgl03" parameterType="SysSxgl03" useGeneratedKeys="true" keyProperty="id">
+        insert into sys_sxgl03
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="名称 != null  and 名称 != ''">名称,</if>
+            <if test="内容 != null  and 内容 != ''">内容,</if>
+            <if test="链接 != null  and 链接 != ''">链接,</if>
+            <if test="类型 != null  and 类型 != ''">类型,</if>
+            <if test="分值 != null  and 分值 != ''">分值,</if>
+            <if test="模式 != null  and 模式 != ''">模式,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="名称 != null  and 名称 != ''">#{名称},</if>
+            <if test="内容 != null  and 内容 != ''">#{内容},</if>
+            <if test="链接 != null  and 链接 != ''">#{链接},</if>
+            <if test="类型 != null  and 类型 != ''">#{类型},</if>
+            <if test="分值 != null  and 分值 != ''">#{分值},</if>
+            <if test="模式 != null  and 模式 != ''">#{模式},</if>
+         </trim>
+    </insert>
+
+    <update id="updateSysSxgl03" parameterType="SysSxgl03">
+        update sys_sxgl03
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="名称 != null  and 名称 != ''">名称 = #{名称},</if>
+            <if test="内容 != null  and 内容 != ''">内容 = #{内容},</if>
+            <if test="链接 != null  and 链接 != ''">链接 = #{链接},</if>
+            <if test="类型 != null  and 类型 != ''">类型 = #{类型},</if>
+            <if test="分值 != null  and 分值 != ''">分值 = #{分值},</if>
+            <if test="模式 != null  and 模式 != ''">模式 = #{模式},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteSysSxgl03ById" parameterType="Long">
+        delete from sys_sxgl03 where id = #{id}
+    </delete>
+
+    <delete id="deleteSysSxgl03ByIds" parameterType="String">
+        delete from sys_sxgl03 where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+    
+</mapper>
