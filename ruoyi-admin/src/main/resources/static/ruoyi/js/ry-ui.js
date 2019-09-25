@@ -810,6 +810,16 @@
             	}
                 return url;
             },
+			//完成信息
+			accomplish: function(id) {
+				$.modal.confirm("确定提交该条" + $.table._option.modalName + "信息吗？", function(){
+
+				});
+			},
+
+
+
+
             // 删除信息
             remove: function(id) {
             	$.modal.confirm("确定删除该条" + $.table._option.modalName + "信息吗？", function() {
@@ -836,6 +846,15 @@
         			$.operate.submit(url, "post", "json", data);
         		});
             },
+
+
+
+
+
+
+
+
+
             // 清空信息
             clean: function() {
             	$.modal.confirm("确定清空所有" + $.table._option.modalName + "吗？", function() {

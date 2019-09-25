@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.system.mapper.SysOthersMapper">
+    
+    <resultMap type="SysOthers" id="SysOthersResult">
+        <result property="id"    column="id"    />
+        <result property="名称"    column="名称"    />
+        <result property="内容"    column="内容"    />
+        <result property="链接"    column="链接"    />
+        <result property="类型"    column="类型"    />
+        <result property="分值"    column="分值"    />
+        <result property="模式"    column="模式"    />
+    </resultMap>
+
+    <sql id="selectSysOthersVo">
+        select id, 名称, 内容, 链接, 类型, 分值, 模式 from sys_others
+    </sql>
+
+    <select id="selectSysOthersList" parameterType="SysOthers" resultMap="SysOthersResult">
+        <include refid="selectSysOthersVo"/>
+        <where>  
+            <if test="名称 != null  and 名称 != ''"> and 名称 = #{名称}</if>
+            <if test="内容 != null  and 内容 != ''"> and 内容 = #{内容}</if>
+            <if test="链接 != null  and 链接 != ''"> and 链接 = #{链接}</if>
+            <if test="类型 != null  and 类型 != ''"> and 类型 = #{类型}</if>
+            <if test="分值 != null  and 分值 != ''"> and 分值 = #{分值}</if>
+            <if test="模式 != null  and 模式 != ''"> and 模式 = #{模式}</if>
+        </where>
+    </select>
+    
+    <select id="selectSysOthersById" parameterType="Long" resultMap="SysOthersResult">
+        <include refid="selectSysOthersVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertSysOthers" parameterType="SysOthers">
+        insert into sys_others
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null ">id,</if>
+            <if test="名称 != null  and 名称 != ''">名称,</if>
+            <if test="内容 != null  and 内容 != ''">内容,</if>
+            <if test="链接 != null  and 链接 != ''">链接,</if>
+            <if test="类型 != null  and 类型 != ''">类型,</if>
+            <if test="分值 != null  and 分值 != ''">分值,</if>
+            <if test="模式 != null  and 模式 != ''">模式,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null ">#{id},</if>
+            <if test="名称 != null  and 名称 != ''">#{名称},</if>
+            <if test="内容 != null  and 内容 != ''">#{内容},</if>
+            <if test="链接 != null  and 链接 != ''">#{链接},</if>
+            <if test="类型 != null  and 类型 != ''">#{类型},</if>
+            <if test="分值 != null  and 分值 != ''">#{分值},</if>
+            <if test="模式 != null  and 模式 != ''">#{模式},</if>
+         </trim>
+    </insert>
+
+    <update id="updateSysOthers" parameterType="SysOthers">
+        update sys_others
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="名称 != null  and 名称 != ''">名称 = #{名称},</if>
+            <if test="内容 != null  and 内容 != ''">内容 = #{内容},</if>
+            <if test="链接 != null  and 链接 != ''">链接 = #{链接},</if>
+            <if test="类型 != null  and 类型 != ''">类型 = #{类型},</if>
+            <if test="分值 != null  and 分值 != ''">分值 = #{分值},</if>
+            <if test="模式 != null  and 模式 != ''">模式 = #{模式},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteSysOthersById" parameterType="Long">
+        delete from sys_others where id = #{id}
+    </delete>
+
+    <delete id="deleteSysOthersByIds" parameterType="String">
+        delete from sys_others where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+    
+</mapper>

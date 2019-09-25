@@ -1,22 +1,22 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : localhost
-Source Server Version : 50722
+Source Server         : localhost_3306
+Source Server Version : 80017
 Source Host           : localhost:3306
 Source Database       : ry
 
 Target Server Type    : MYSQL
-Target Server Version : 50722
+Target Server Version : 80017
 File Encoding         : 65001
 
-Date: 2019-09-25 17:05:18
+Date: 2019-09-23 18:38:20
 */
 
 SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------
--- Table structure for `gen_table`
+-- Table structure for gen_table
 -- ----------------------------
 DROP TABLE IF EXISTS `gen_table`;
 CREATE TABLE `gen_table` (
@@ -37,11 +37,12 @@ CREATE TABLE `gen_table` (
   `update_time` datetime DEFAULT NULL COMMENT '更新时间',
   `remark` varchar(500) DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`table_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COMMENT='代码生成业务表';
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COMMENT='代码生成业务表';
 
 -- ----------------------------
 -- Records of gen_table
 -- ----------------------------
+INSERT INTO `gen_table` VALUES ('1', 'sys_score', '学生成绩表', 'SysScore', 'crud', 'com.ruoyi.system', 'system', 'score', '学生成绩', 'ruoyi', '{\"treeName\":\"\",\"treeParentCode\":\"\",\"treeCode\":\"\"}', 'admin', '2019-09-20 10:56:44', '', '2019-09-20 10:58:00', '');
 INSERT INTO `gen_table` VALUES ('4', 'sys_sxgl', '实训攻略表', 'SysSxgl', 'crud', 'com.ruoyi.system', 'system', 'sxgl', '实训攻略', 'ruoyi', null, 'admin', '2019-09-20 14:59:24', '', null, null);
 INSERT INTO `gen_table` VALUES ('5', 'sys_sxgl01', '实训攻略表', 'SysSxgl01', 'crud', 'com.ruoyi.system', 'system', 'sxgl01', '实训攻略', 'ruoyi', null, 'admin', '2019-09-20 15:41:51', '', null, null);
 INSERT INTO `gen_table` VALUES ('6', 'sys_sxgl02', '实训攻略表', 'SysSxgl02', 'crud', 'com.ruoyi.system', 'system', 'sxgl02', '实训攻略', 'ruoyi', null, 'admin', '2019-09-20 16:02:00', '', null, null);
@@ -49,10 +50,9 @@ INSERT INTO `gen_table` VALUES ('7', 'sys_sxgl03', '实训攻略表', 'SysSxgl03
 INSERT INTO `gen_table` VALUES ('8', 'sys_others', '其他任务', 'SysOthers', 'crud', 'com.ruoyi.system', 'system', 'others', '其他任务', 'ruoyi', null, 'admin', '2019-09-23 15:25:19', '', null, null);
 INSERT INTO `gen_table` VALUES ('9', 'sys_gl', '项目攻略', 'SysGl', 'crud', 'com.ruoyi.system', 'system', 'gl', '项目攻略', 'ruoyi', null, 'admin', '2019-09-23 15:49:49', '', null, null);
 INSERT INTO `gen_table` VALUES ('10', 'sys_newmessage', '趣味知识表', 'SysNewmessage', 'crud', 'com.ruoyi.system', 'system', 'newmessage', '趣味知识', 'ruoyi', null, 'admin', '2019-09-23 16:15:11', '', null, null);
-INSERT INTO `gen_table` VALUES ('11', 'sys_score', '学生成绩表', 'SysScore', 'crud', 'com.ruoyi.system', 'system', 'score', '学生成绩', 'ruoyi', null, 'admin', '2019-09-25 10:18:13', '', null, null);
 
 -- ----------------------------
--- Table structure for `gen_table_column`
+-- Table structure for gen_table_column
 -- ----------------------------
 DROP TABLE IF EXISTS `gen_table_column`;
 CREATE TABLE `gen_table_column` (
@@ -79,11 +79,15 @@ CREATE TABLE `gen_table_column` (
   `update_by` varchar(64) DEFAULT '' COMMENT '更新者',
   `update_time` datetime DEFAULT NULL COMMENT '更新时间',
   PRIMARY KEY (`column_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=79 DEFAULT CHARSET=utf8 COMMENT='代码生成业务表字段';
+) ENGINE=InnoDB AUTO_INCREMENT=74 DEFAULT CHARSET=utf8 COMMENT='代码生成业务表字段';
 
 -- ----------------------------
 -- Records of gen_table_column
 -- ----------------------------
+INSERT INTO `gen_table_column` VALUES ('1', '1', 'student_id', 'null', 'int(255)', 'Long', 'studentId', '1', '1', null, '1', null, '1', '1', 'EQ', 'input', '', '1', 'admin', '2019-09-20 10:56:44', null, '2019-09-20 10:58:00');
+INSERT INTO `gen_table_column` VALUES ('2', '1', 'student_name', 'null', 'varchar(255)', 'String', 'studentName', '0', '0', null, '1', '1', '1', '1', 'LIKE', 'input', '', '2', 'admin', '2019-09-20 10:56:44', null, '2019-09-20 10:58:00');
+INSERT INTO `gen_table_column` VALUES ('3', '1', 'couse_name', 'null', 'varchar(255)', 'String', 'couseName', '0', '0', null, '1', '1', '1', '1', 'LIKE', 'input', '', '3', 'admin', '2019-09-20 10:56:44', null, '2019-09-20 10:58:00');
+INSERT INTO `gen_table_column` VALUES ('4', '1', 'score', 'null', 'float(255,2)', 'Double', 'score', '0', '0', null, '1', '1', '1', '1', 'EQ', 'input', '', '4', 'admin', '2019-09-20 10:56:44', null, '2019-09-20 10:58:00');
 INSERT INTO `gen_table_column` VALUES ('28', '4', 'id', null, 'int(255)', 'Long', 'id', '1', '1', null, '1', null, null, null, 'EQ', 'input', '', '1', 'admin', '2019-09-20 14:59:25', '', null);
 INSERT INTO `gen_table_column` VALUES ('29', '4', '名称', null, 'varchar(255)', 'String', '名称', '0', '0', null, '1', '1', '1', '1', 'EQ', 'input', '', '2', 'admin', '2019-09-20 14:59:25', '', null);
 INSERT INTO `gen_table_column` VALUES ('30', '4', '内容', null, 'varchar(255)', 'String', '内容', '0', '0', null, '1', '1', '1', '1', 'EQ', 'input', '', '3', 'admin', '2019-09-20 14:59:25', '', null);
@@ -130,14 +134,9 @@ INSERT INTO `gen_table_column` VALUES ('70', '10', 'id', null, 'int(11)', 'Long'
 INSERT INTO `gen_table_column` VALUES ('71', '10', '名称', null, 'varchar(255)', 'String', '名称', '0', '0', null, '1', '1', '1', '1', 'EQ', 'input', '', '2', 'admin', '2019-09-23 16:15:11', '', null);
 INSERT INTO `gen_table_column` VALUES ('72', '10', '内容', null, 'varchar(255)', 'String', '内容', '0', '0', null, '1', '1', '1', '1', 'EQ', 'input', '', '3', 'admin', '2019-09-23 16:15:11', '', null);
 INSERT INTO `gen_table_column` VALUES ('73', '10', '链接', null, 'text', 'String', '链接', '0', '0', null, '1', '1', '1', '1', 'EQ', 'input', '', '4', 'admin', '2019-09-23 16:15:11', '', null);
-INSERT INTO `gen_table_column` VALUES ('74', '11', 'student_id', null, 'int(255)', 'Long', 'studentId', '1', '1', null, '1', null, null, null, 'EQ', 'input', '', '1', 'admin', '2019-09-25 10:18:13', '', null);
-INSERT INTO `gen_table_column` VALUES ('75', '11', 'student_name', null, 'varchar(255)', 'String', 'studentName', '0', '0', null, '1', '1', '1', '1', 'LIKE', 'input', '', '2', 'admin', '2019-09-25 10:18:13', '', null);
-INSERT INTO `gen_table_column` VALUES ('76', '11', 'couse_name', null, 'varchar(255)', 'String', 'couseName', '0', '0', null, '1', '1', '1', '1', 'LIKE', 'input', '', '3', 'admin', '2019-09-25 10:18:13', '', null);
-INSERT INTO `gen_table_column` VALUES ('77', '11', 'score', null, 'float(255,2)', 'Double', 'score', '0', '0', null, '1', '1', '1', '1', 'EQ', 'input', '', '4', 'admin', '2019-09-25 10:18:13', '', null);
-INSERT INTO `gen_table_column` VALUES ('78', '11', '分值', null, 'varchar(255)', 'String', '分值', '0', '0', null, '1', '1', '1', '1', 'EQ', 'input', '', '5', 'admin', '2019-09-25 10:18:13', '', null);
 
 -- ----------------------------
--- Table structure for `qrtz_blob_triggers`
+-- Table structure for qrtz_blob_triggers
 -- ----------------------------
 DROP TABLE IF EXISTS `qrtz_blob_triggers`;
 CREATE TABLE `qrtz_blob_triggers` (
@@ -154,7 +153,7 @@ CREATE TABLE `qrtz_blob_triggers` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for `qrtz_calendars`
+-- Table structure for qrtz_calendars
 -- ----------------------------
 DROP TABLE IF EXISTS `qrtz_calendars`;
 CREATE TABLE `qrtz_calendars` (
@@ -169,7 +168,7 @@ CREATE TABLE `qrtz_calendars` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for `qrtz_cron_triggers`
+-- Table structure for qrtz_cron_triggers
 -- ----------------------------
 DROP TABLE IF EXISTS `qrtz_cron_triggers`;
 CREATE TABLE `qrtz_cron_triggers` (
@@ -190,7 +189,7 @@ INSERT INTO `qrtz_cron_triggers` VALUES ('RuoyiScheduler', 'TASK_CLASS_NAME2', '
 INSERT INTO `qrtz_cron_triggers` VALUES ('RuoyiScheduler', 'TASK_CLASS_NAME3', 'DEFAULT', '0/20 * * * * ?', 'Asia/Shanghai');
 
 -- ----------------------------
--- Table structure for `qrtz_fired_triggers`
+-- Table structure for qrtz_fired_triggers
 -- ----------------------------
 DROP TABLE IF EXISTS `qrtz_fired_triggers`;
 CREATE TABLE `qrtz_fired_triggers` (
@@ -215,7 +214,7 @@ CREATE TABLE `qrtz_fired_triggers` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for `qrtz_job_details`
+-- Table structure for qrtz_job_details
 -- ----------------------------
 DROP TABLE IF EXISTS `qrtz_job_details`;
 CREATE TABLE `qrtz_job_details` (
@@ -240,7 +239,7 @@ INSERT INTO `qrtz_job_details` VALUES ('RuoyiScheduler', 'TASK_CLASS_NAME2', 'DE
 INSERT INTO `qrtz_job_details` VALUES ('RuoyiScheduler', 'TASK_CLASS_NAME3', 'DEFAULT', null, 'com.ruoyi.quartz.util.QuartzDisallowConcurrentExecution', '0', '1', '0', '0', 0xACED0005737200156F72672E71756172747A2E4A6F62446174614D61709FB083E8BFA9B0CB020000787200266F72672E71756172747A2E7574696C732E537472696E674B65794469727479466C61674D61708208E8C3FBC55D280200015A0013616C6C6F77735472616E7369656E74446174617872001D6F72672E71756172747A2E7574696C732E4469727479466C61674D617013E62EAD28760ACE0200025A000564697274794C00036D617074000F4C6A6176612F7574696C2F4D61703B787001737200116A6176612E7574696C2E486173684D61700507DAC1C31660D103000246000A6C6F6164466163746F724900097468726573686F6C6478703F4000000000000C7708000000100000000174000F5441534B5F50524F504552544945537372001E636F6D2E72756F79692E71756172747A2E646F6D61696E2E5379734A6F6200000000000000010200084C000A636F6E63757272656E747400124C6A6176612F6C616E672F537472696E673B4C000E63726F6E45787072657373696F6E71007E00094C000C696E766F6B6554617267657471007E00094C00086A6F6247726F757071007E00094C00056A6F6249647400104C6A6176612F6C616E672F4C6F6E673B4C00076A6F624E616D6571007E00094C000D6D697366697265506F6C69637971007E00094C000673746174757371007E000978720027636F6D2E72756F79692E636F6D6D6F6E2E636F72652E646F6D61696E2E42617365456E7469747900000000000000010200074C0008637265617465427971007E00094C000A63726561746554696D657400104C6A6176612F7574696C2F446174653B4C0006706172616D7371007E00034C000672656D61726B71007E00094C000B73656172636856616C756571007E00094C0008757064617465427971007E00094C000A75706461746554696D6571007E000C787074000561646D696E7372000E6A6176612E7574696C2E44617465686A81014B59741903000078707708000001622CDE29E078707400007070707400013174000E302F3230202A202A202A202A203F74003872795461736B2E72794D756C7469706C65506172616D7328277279272C20747275652C20323030304C2C203331362E3530442C203130302974000744454641554C547372000E6A6176612E6C616E672E4C6F6E673B8BE490CC8F23DF0200014A000576616C7565787200106A6176612E6C616E672E4E756D62657286AC951D0B94E08B02000078700000000000000003740018E7B3BBE7BB9FE9BB98E8AEA4EFBC88E5A49AE58F82EFBC8974000133740001317800);
 
 -- ----------------------------
--- Table structure for `qrtz_locks`
+-- Table structure for qrtz_locks
 -- ----------------------------
 DROP TABLE IF EXISTS `qrtz_locks`;
 CREATE TABLE `qrtz_locks` (
@@ -256,7 +255,7 @@ INSERT INTO `qrtz_locks` VALUES ('RuoyiScheduler', 'STATE_ACCESS');
 INSERT INTO `qrtz_locks` VALUES ('RuoyiScheduler', 'TRIGGER_ACCESS');
 
 -- ----------------------------
--- Table structure for `qrtz_paused_trigger_grps`
+-- Table structure for qrtz_paused_trigger_grps
 -- ----------------------------
 DROP TABLE IF EXISTS `qrtz_paused_trigger_grps`;
 CREATE TABLE `qrtz_paused_trigger_grps` (
@@ -270,7 +269,7 @@ CREATE TABLE `qrtz_paused_trigger_grps` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for `qrtz_scheduler_state`
+-- Table structure for qrtz_scheduler_state
 -- ----------------------------
 DROP TABLE IF EXISTS `qrtz_scheduler_state`;
 CREATE TABLE `qrtz_scheduler_state` (
@@ -284,10 +283,10 @@ CREATE TABLE `qrtz_scheduler_state` (
 -- ----------------------------
 -- Records of qrtz_scheduler_state
 -- ----------------------------
-INSERT INTO `qrtz_scheduler_state` VALUES ('RuoyiScheduler', 'LAPTOP-TS2T2LQL1569401988625', '1569402308081', '15000');
+INSERT INTO `qrtz_scheduler_state` VALUES ('RuoyiScheduler', 'PC-2019090822361569227052484', '1569232232202', '15000');
 
 -- ----------------------------
--- Table structure for `qrtz_simple_triggers`
+-- Table structure for qrtz_simple_triggers
 -- ----------------------------
 DROP TABLE IF EXISTS `qrtz_simple_triggers`;
 CREATE TABLE `qrtz_simple_triggers` (
@@ -306,7 +305,7 @@ CREATE TABLE `qrtz_simple_triggers` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for `qrtz_simprop_triggers`
+-- Table structure for qrtz_simprop_triggers
 -- ----------------------------
 DROP TABLE IF EXISTS `qrtz_simprop_triggers`;
 CREATE TABLE `qrtz_simprop_triggers` (
@@ -333,7 +332,7 @@ CREATE TABLE `qrtz_simprop_triggers` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for `qrtz_triggers`
+-- Table structure for qrtz_triggers
 -- ----------------------------
 DROP TABLE IF EXISTS `qrtz_triggers`;
 CREATE TABLE `qrtz_triggers` (
@@ -361,12 +360,12 @@ CREATE TABLE `qrtz_triggers` (
 -- ----------------------------
 -- Records of qrtz_triggers
 -- ----------------------------
-INSERT INTO `qrtz_triggers` VALUES ('RuoyiScheduler', 'TASK_CLASS_NAME1', 'DEFAULT', 'TASK_CLASS_NAME1', 'DEFAULT', null, '1569401990000', '-1', '5', 'PAUSED', 'CRON', '1569401989000', '0', null, '2', '');
-INSERT INTO `qrtz_triggers` VALUES ('RuoyiScheduler', 'TASK_CLASS_NAME2', 'DEFAULT', 'TASK_CLASS_NAME2', 'DEFAULT', null, '1569402000000', '-1', '5', 'PAUSED', 'CRON', '1569401989000', '0', null, '2', '');
-INSERT INTO `qrtz_triggers` VALUES ('RuoyiScheduler', 'TASK_CLASS_NAME3', 'DEFAULT', 'TASK_CLASS_NAME3', 'DEFAULT', null, '1569402000000', '-1', '5', 'PAUSED', 'CRON', '1569401989000', '0', null, '2', '');
+INSERT INTO `qrtz_triggers` VALUES ('RuoyiScheduler', 'TASK_CLASS_NAME1', 'DEFAULT', 'TASK_CLASS_NAME1', 'DEFAULT', null, '1569227060000', '-1', '5', 'PAUSED', 'CRON', '1569227052000', '0', null, '2', '');
+INSERT INTO `qrtz_triggers` VALUES ('RuoyiScheduler', 'TASK_CLASS_NAME2', 'DEFAULT', 'TASK_CLASS_NAME2', 'DEFAULT', null, '1569227055000', '-1', '5', 'PAUSED', 'CRON', '1569227052000', '0', null, '2', '');
+INSERT INTO `qrtz_triggers` VALUES ('RuoyiScheduler', 'TASK_CLASS_NAME3', 'DEFAULT', 'TASK_CLASS_NAME3', 'DEFAULT', null, '1569227060000', '-1', '5', 'PAUSED', 'CRON', '1569227053000', '0', null, '2', '');
 
 -- ----------------------------
--- Table structure for `sys_config`
+-- Table structure for sys_config
 -- ----------------------------
 DROP TABLE IF EXISTS `sys_config`;
 CREATE TABLE `sys_config` (
@@ -381,7 +380,7 @@ CREATE TABLE `sys_config` (
   `update_time` datetime DEFAULT NULL COMMENT '更新时间',
   `remark` varchar(500) DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`config_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='参数配置表';
+) ENGINE=InnoDB AUTO_INCREMENT=100 DEFAULT CHARSET=utf8 COMMENT='参数配置表';
 
 -- ----------------------------
 -- Records of sys_config
@@ -391,7 +390,7 @@ INSERT INTO `sys_config` VALUES ('2', '用户管理-账号初始密码', 'sys.us
 INSERT INTO `sys_config` VALUES ('3', '主框架页-侧边栏主题', 'sys.index.sideTheme', 'theme-dark', 'Y', 'admin', '2018-03-16 11:33:00', 'ry', '2018-03-16 11:33:00', '深色主题theme-dark，浅色主题theme-light');
 
 -- ----------------------------
--- Table structure for `sys_dept`
+-- Table structure for sys_dept
 -- ----------------------------
 DROP TABLE IF EXISTS `sys_dept`;
 CREATE TABLE `sys_dept` (
@@ -410,7 +409,7 @@ CREATE TABLE `sys_dept` (
   `update_by` varchar(64) DEFAULT '' COMMENT '更新者',
   `update_time` datetime DEFAULT NULL COMMENT '更新时间',
   PRIMARY KEY (`dept_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=110 DEFAULT CHARSET=utf8 COMMENT='部门表';
+) ENGINE=InnoDB AUTO_INCREMENT=200 DEFAULT CHARSET=utf8 COMMENT='部门表';
 
 -- ----------------------------
 -- Records of sys_dept
@@ -427,7 +426,7 @@ INSERT INTO `sys_dept` VALUES ('108', '102', '0,100,102', '市场部门', '1', '
 INSERT INTO `sys_dept` VALUES ('109', '102', '0,100,102', '财务部门', '2', '若依', '15888888888', 'ry@qq.com', '0', '0', 'admin', '2018-03-16 11:33:00', 'ry', '2018-03-16 11:33:00');
 
 -- ----------------------------
--- Table structure for `sys_dict_data`
+-- Table structure for sys_dict_data
 -- ----------------------------
 DROP TABLE IF EXISTS `sys_dict_data`;
 CREATE TABLE `sys_dict_data` (
@@ -446,7 +445,7 @@ CREATE TABLE `sys_dict_data` (
   `update_time` datetime DEFAULT NULL COMMENT '更新时间',
   `remark` varchar(500) DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`dict_code`)
-) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8 COMMENT='字典数据表';
+) ENGINE=InnoDB AUTO_INCREMENT=100 DEFAULT CHARSET=utf8 COMMENT='字典数据表';
 
 -- ----------------------------
 -- Records of sys_dict_data
@@ -481,7 +480,7 @@ INSERT INTO `sys_dict_data` VALUES ('27', '1', '成功', '0', 'sys_common_status
 INSERT INTO `sys_dict_data` VALUES ('28', '2', '失败', '1', 'sys_common_status', '', 'danger', 'N', '0', 'admin', '2018-03-16 11:33:00', 'ry', '2018-03-16 11:33:00', '停用状态');
 
 -- ----------------------------
--- Table structure for `sys_dict_type`
+-- Table structure for sys_dict_type
 -- ----------------------------
 DROP TABLE IF EXISTS `sys_dict_type`;
 CREATE TABLE `sys_dict_type` (
@@ -496,7 +495,7 @@ CREATE TABLE `sys_dict_type` (
   `remark` varchar(500) DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`dict_id`),
   UNIQUE KEY `dict_type` (`dict_type`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COMMENT='字典类型表';
+) ENGINE=InnoDB AUTO_INCREMENT=100 DEFAULT CHARSET=utf8 COMMENT='字典类型表';
 
 -- ----------------------------
 -- Records of sys_dict_type
@@ -513,19 +512,19 @@ INSERT INTO `sys_dict_type` VALUES ('9', '操作类型', 'sys_oper_type', '0', '
 INSERT INTO `sys_dict_type` VALUES ('10', '系统状态', 'sys_common_status', '0', 'admin', '2018-03-16 11:33:00', 'ry', '2018-03-16 11:33:00', '登录状态列表');
 
 -- ----------------------------
--- Table structure for `sys_gl`
+-- Table structure for sys_gl
 -- ----------------------------
 DROP TABLE IF EXISTS `sys_gl`;
 CREATE TABLE `sys_gl` (
   `id` int(255) NOT NULL AUTO_INCREMENT,
-  `名称` varchar(255) DEFAULT NULL,
-  `内容` varchar(255) DEFAULT NULL,
-  `链接` text,
-  `类型` varchar(255) DEFAULT NULL,
-  `分值` varchar(255) DEFAULT NULL,
-  `模式` varchar(255) DEFAULT NULL,
+  `名称` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `内容` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `链接` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci,
+  `类型` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `分值` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `模式` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COMMENT='项目攻略';
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='项目攻略';
 
 -- ----------------------------
 -- Records of sys_gl
@@ -540,7 +539,7 @@ INSERT INTO `sys_gl` VALUES ('7', 'SourceTree安装', null, '<a href=\"https://c
 INSERT INTO `sys_gl` VALUES ('8', '若依框架使用', null, '<a href=\"https://blog.csdn.net/SpringAndGG/article/details/96474583\">点我</a>\n<a></a>', null, null, '个人');
 
 -- ----------------------------
--- Table structure for `sys_job`
+-- Table structure for sys_job
 -- ----------------------------
 DROP TABLE IF EXISTS `sys_job`;
 CREATE TABLE `sys_job` (
@@ -558,7 +557,7 @@ CREATE TABLE `sys_job` (
   `update_time` datetime DEFAULT NULL COMMENT '更新时间',
   `remark` varchar(500) DEFAULT '' COMMENT '备注信息',
   PRIMARY KEY (`job_id`,`job_name`,`job_group`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='定时任务调度表';
+) ENGINE=InnoDB AUTO_INCREMENT=100 DEFAULT CHARSET=utf8 COMMENT='定时任务调度表';
 
 -- ----------------------------
 -- Records of sys_job
@@ -568,7 +567,7 @@ INSERT INTO `sys_job` VALUES ('2', '系统默认（有参）', 'DEFAULT', 'ryTas
 INSERT INTO `sys_job` VALUES ('3', '系统默认（多参）', 'DEFAULT', 'ryTask.ryMultipleParams(\'ry\', true, 2000L, 316.50D, 100)', '0/20 * * * * ?', '3', '1', '1', 'admin', '2018-03-16 11:33:00', 'ry', '2018-03-16 11:33:00', '');
 
 -- ----------------------------
--- Table structure for `sys_job_log`
+-- Table structure for sys_job_log
 -- ----------------------------
 DROP TABLE IF EXISTS `sys_job_log`;
 CREATE TABLE `sys_job_log` (
@@ -588,7 +587,7 @@ CREATE TABLE `sys_job_log` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for `sys_logininfor`
+-- Table structure for sys_logininfor
 -- ----------------------------
 DROP TABLE IF EXISTS `sys_logininfor`;
 CREATE TABLE `sys_logininfor` (
@@ -602,7 +601,7 @@ CREATE TABLE `sys_logininfor` (
   `msg` varchar(255) DEFAULT '' COMMENT '提示消息',
   `login_time` datetime DEFAULT NULL COMMENT '访问时间',
   PRIMARY KEY (`info_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=219 DEFAULT CHARSET=utf8 COMMENT='系统访问记录';
+) ENGINE=InnoDB AUTO_INCREMENT=149 DEFAULT CHARSET=utf8 COMMENT='系统访问记录';
 
 -- ----------------------------
 -- Records of sys_logininfor
@@ -656,79 +655,9 @@ INSERT INTO `sys_logininfor` VALUES ('145', 'admin', '127.0.0.1', '内网IP', 'C
 INSERT INTO `sys_logininfor` VALUES ('146', 'admin', '127.0.0.1', '内网IP', 'Chrome', 'Windows 10', '0', '登录成功', '2019-09-23 16:19:16');
 INSERT INTO `sys_logininfor` VALUES ('147', 'admin', '127.0.0.1', '内网IP', 'Chrome', 'Windows 10', '0', '登录成功', '2019-09-23 16:24:45');
 INSERT INTO `sys_logininfor` VALUES ('148', 'admin', '127.0.0.1', '内网IP', 'Chrome', 'Windows 10', '0', '登录成功', '2019-09-23 17:03:26');
-INSERT INTO `sys_logininfor` VALUES ('149', 'admin', '127.0.0.1', '内网IP', 'Chrome', 'Windows 10', '0', '登录成功', '2019-09-24 09:40:09');
-INSERT INTO `sys_logininfor` VALUES ('150', 'admin', '127.0.0.1', '内网IP', 'Chrome', 'Windows 7', '0', '登录成功', '2019-09-24 09:50:39');
-INSERT INTO `sys_logininfor` VALUES ('151', 'admin', '127.0.0.1', '内网IP', 'Chrome', 'Windows 7', '0', '登录成功', '2019-09-24 10:07:33');
-INSERT INTO `sys_logininfor` VALUES ('152', 'admin', '127.0.0.1', '内网IP', 'Chrome', 'Windows 7', '0', '登录成功', '2019-09-24 11:09:46');
-INSERT INTO `sys_logininfor` VALUES ('153', 'admin', '127.0.0.1', '内网IP', 'Chrome', 'Windows 7', '0', '登录成功', '2019-09-24 11:58:16');
-INSERT INTO `sys_logininfor` VALUES ('154', 'admin', '127.0.0.1', '内网IP', 'Chrome', 'Windows 7', '0', '登录成功', '2019-09-24 12:07:24');
-INSERT INTO `sys_logininfor` VALUES ('155', 'admin', '127.0.0.1', '内网IP', 'Chrome', 'Windows 7', '1', '验证码错误', '2019-09-24 12:08:46');
-INSERT INTO `sys_logininfor` VALUES ('156', 'admin', '127.0.0.1', '内网IP', 'Chrome', 'Windows 7', '0', '登录成功', '2019-09-24 12:08:49');
-INSERT INTO `sys_logininfor` VALUES ('157', 'admin', '127.0.0.1', '内网IP', 'Chrome', 'Windows 7', '0', '登录成功', '2019-09-24 12:22:27');
-INSERT INTO `sys_logininfor` VALUES ('158', 'admin', '127.0.0.1', '内网IP', 'Chrome', 'Windows 7', '0', '登录成功', '2019-09-24 14:33:06');
-INSERT INTO `sys_logininfor` VALUES ('159', 'admin', '127.0.0.1', '内网IP', 'Chrome', 'Windows 7', '0', '登录成功', '2019-09-24 15:09:10');
-INSERT INTO `sys_logininfor` VALUES ('160', 'admin', '127.0.0.1', '内网IP', 'Chrome', 'Windows 7', '0', '登录成功', '2019-09-24 15:17:57');
-INSERT INTO `sys_logininfor` VALUES ('161', 'admin', '127.0.0.1', '内网IP', 'Chrome', 'Windows 7', '0', '登录成功', '2019-09-24 15:34:02');
-INSERT INTO `sys_logininfor` VALUES ('162', 'admin', '127.0.0.1', '内网IP', 'Chrome', 'Windows 7', '0', '登录成功', '2019-09-24 15:53:32');
-INSERT INTO `sys_logininfor` VALUES ('163', 'admin', '127.0.0.1', '内网IP', 'Chrome', 'Windows 7', '0', '登录成功', '2019-09-24 18:01:06');
-INSERT INTO `sys_logininfor` VALUES ('164', 'admin', '127.0.0.1', '内网IP', 'Chrome', 'Windows 7', '0', '登录成功', '2019-09-24 18:06:51');
-INSERT INTO `sys_logininfor` VALUES ('165', 'admin', '127.0.0.1', '内网IP', 'Chrome', 'Windows 7', '0', '登录成功', '2019-09-25 09:50:24');
-INSERT INTO `sys_logininfor` VALUES ('166', 'admin', '127.0.0.1', '内网IP', 'Chrome', 'Windows 7', '1', '验证码错误', '2019-09-25 09:56:42');
-INSERT INTO `sys_logininfor` VALUES ('167', 'admin', '127.0.0.1', '内网IP', 'Chrome', 'Windows 7', '0', '登录成功', '2019-09-25 09:56:45');
-INSERT INTO `sys_logininfor` VALUES ('168', 'admin', '127.0.0.1', '内网IP', 'Chrome', 'Windows 7', '0', '登录成功', '2019-09-25 10:05:58');
-INSERT INTO `sys_logininfor` VALUES ('169', 'admin', '127.0.0.1', '内网IP', 'Chrome', 'Windows 7', '0', '登录成功', '2019-09-25 10:13:03');
-INSERT INTO `sys_logininfor` VALUES ('170', 'admin', '127.0.0.1', '内网IP', 'Chrome', 'Windows 7', '0', '登录成功', '2019-09-25 10:15:54');
-INSERT INTO `sys_logininfor` VALUES ('171', 'admin', '127.0.0.1', '内网IP', 'Chrome', 'Windows 7', '0', '登录成功', '2019-09-25 10:27:25');
-INSERT INTO `sys_logininfor` VALUES ('172', 'admin', '127.0.0.1', '内网IP', 'Chrome', 'Windows 7', '1', '验证码错误', '2019-09-25 10:39:05');
-INSERT INTO `sys_logininfor` VALUES ('173', 'admin', '127.0.0.1', '内网IP', 'Chrome', 'Windows 7', '0', '登录成功', '2019-09-25 10:39:07');
-INSERT INTO `sys_logininfor` VALUES ('174', 'admin', '127.0.0.1', '内网IP', 'Chrome', 'Windows 7', '0', '登录成功', '2019-09-25 10:50:04');
-INSERT INTO `sys_logininfor` VALUES ('175', 'admin', '127.0.0.1', '内网IP', 'Chrome', 'Windows 7', '0', '登录成功', '2019-09-25 10:54:50');
-INSERT INTO `sys_logininfor` VALUES ('176', 'admin', '127.0.0.1', '内网IP', 'Chrome', 'Windows 7', '0', '登录成功', '2019-09-25 11:00:28');
-INSERT INTO `sys_logininfor` VALUES ('177', 'admin', '127.0.0.1', '内网IP', 'Chrome', 'Windows 7', '0', '登录成功', '2019-09-25 11:02:08');
-INSERT INTO `sys_logininfor` VALUES ('178', 'admin', '127.0.0.1', '内网IP', 'Chrome', 'Windows 7', '0', '登录成功', '2019-09-25 11:03:16');
-INSERT INTO `sys_logininfor` VALUES ('179', 'admin', '127.0.0.1', '内网IP', 'Chrome', 'Windows 7', '0', '登录成功', '2019-09-25 11:04:26');
-INSERT INTO `sys_logininfor` VALUES ('180', 'admin', '127.0.0.1', '内网IP', 'Chrome', 'Windows 7', '0', '登录成功', '2019-09-25 11:05:56');
-INSERT INTO `sys_logininfor` VALUES ('181', 'admin', '127.0.0.1', '内网IP', 'Chrome', 'Windows 7', '0', '登录成功', '2019-09-25 11:09:11');
-INSERT INTO `sys_logininfor` VALUES ('182', 'admin', '127.0.0.1', '内网IP', 'Chrome', 'Windows 7', '0', '登录成功', '2019-09-25 11:14:26');
-INSERT INTO `sys_logininfor` VALUES ('183', 'admin', '127.0.0.1', '内网IP', 'Chrome', 'Windows 7', '0', '登录成功', '2019-09-25 11:40:51');
-INSERT INTO `sys_logininfor` VALUES ('184', 'admin', '127.0.0.1', '内网IP', 'Chrome', 'Windows 7', '0', '登录成功', '2019-09-25 11:45:32');
-INSERT INTO `sys_logininfor` VALUES ('185', 'admin', '127.0.0.1', '内网IP', 'Chrome', 'Windows 7', '0', '登录成功', '2019-09-25 11:52:54');
-INSERT INTO `sys_logininfor` VALUES ('186', 'admin', '127.0.0.1', '内网IP', 'Chrome', 'Windows 7', '0', '登录成功', '2019-09-25 14:42:16');
-INSERT INTO `sys_logininfor` VALUES ('187', 'admin', '127.0.0.1', '内网IP', 'Chrome', 'Windows 7', '0', '登录成功', '2019-09-25 14:49:46');
-INSERT INTO `sys_logininfor` VALUES ('188', 'admin', '127.0.0.1', '内网IP', 'Chrome', 'Windows 7', '0', '登录成功', '2019-09-25 14:56:32');
-INSERT INTO `sys_logininfor` VALUES ('189', 'admin', '127.0.0.1', '内网IP', 'Chrome', 'Windows 7', '0', '登录成功', '2019-09-25 14:59:17');
-INSERT INTO `sys_logininfor` VALUES ('190', 'admin', '127.0.0.1', '内网IP', 'Chrome', 'Windows 7', '0', '登录成功', '2019-09-25 15:06:20');
-INSERT INTO `sys_logininfor` VALUES ('191', 'admin', '127.0.0.1', '内网IP', 'Chrome', 'Windows 7', '0', '登录成功', '2019-09-25 15:10:53');
-INSERT INTO `sys_logininfor` VALUES ('192', 'admin', '127.0.0.1', '内网IP', 'Chrome', 'Windows 7', '0', '登录成功', '2019-09-25 15:21:23');
-INSERT INTO `sys_logininfor` VALUES ('193', 'admin', '127.0.0.1', '内网IP', 'Chrome', 'Windows 7', '0', '登录成功', '2019-09-25 15:22:45');
-INSERT INTO `sys_logininfor` VALUES ('194', 'admin', '127.0.0.1', '内网IP', 'Chrome', 'Windows 7', '0', '登录成功', '2019-09-25 15:25:09');
-INSERT INTO `sys_logininfor` VALUES ('195', 'admin', '127.0.0.1', '内网IP', 'Chrome', 'Windows 7', '0', '登录成功', '2019-09-25 15:30:00');
-INSERT INTO `sys_logininfor` VALUES ('196', 'admin', '127.0.0.1', '内网IP', 'Chrome', 'Windows 7', '0', '登录成功', '2019-09-25 15:38:00');
-INSERT INTO `sys_logininfor` VALUES ('197', 'admin', '127.0.0.1', '内网IP', 'Chrome', 'Windows 7', '0', '登录成功', '2019-09-25 15:40:11');
-INSERT INTO `sys_logininfor` VALUES ('198', 'admin', '127.0.0.1', '内网IP', 'Chrome', 'Windows 7', '0', '登录成功', '2019-09-25 15:43:28');
-INSERT INTO `sys_logininfor` VALUES ('199', 'admin', '127.0.0.1', '内网IP', 'Chrome', 'Windows 7', '0', '登录成功', '2019-09-25 15:45:04');
-INSERT INTO `sys_logininfor` VALUES ('200', 'admin', '127.0.0.1', '内网IP', 'Chrome', 'Windows 7', '1', '验证码错误', '2019-09-25 15:46:07');
-INSERT INTO `sys_logininfor` VALUES ('201', 'admin', '127.0.0.1', '内网IP', 'Chrome', 'Windows 7', '0', '登录成功', '2019-09-25 15:46:10');
-INSERT INTO `sys_logininfor` VALUES ('202', 'admin', '127.0.0.1', '内网IP', 'Chrome', 'Windows 7', '0', '登录成功', '2019-09-25 15:53:25');
-INSERT INTO `sys_logininfor` VALUES ('203', 'admin', '127.0.0.1', '内网IP', 'Chrome', 'Windows 7', '1', '验证码错误', '2019-09-25 15:59:09');
-INSERT INTO `sys_logininfor` VALUES ('204', 'admin', '127.0.0.1', '内网IP', 'Chrome', 'Windows 7', '1', '验证码错误', '2019-09-25 15:59:12');
-INSERT INTO `sys_logininfor` VALUES ('205', 'admin', '127.0.0.1', '内网IP', 'Chrome', 'Windows 7', '0', '登录成功', '2019-09-25 15:59:16');
-INSERT INTO `sys_logininfor` VALUES ('206', 'admin', '127.0.0.1', '内网IP', 'Chrome', 'Windows 7', '0', '登录成功', '2019-09-25 16:14:30');
-INSERT INTO `sys_logininfor` VALUES ('207', 'admin', '127.0.0.1', '内网IP', 'Chrome', 'Windows 7', '0', '登录成功', '2019-09-25 16:30:17');
-INSERT INTO `sys_logininfor` VALUES ('208', 'admin', '127.0.0.1', '内网IP', 'Chrome', 'Windows 7', '0', '登录成功', '2019-09-25 16:30:36');
-INSERT INTO `sys_logininfor` VALUES ('209', 'admin', '127.0.0.1', '内网IP', 'Chrome', 'Windows 7', '0', '登录成功', '2019-09-25 16:31:43');
-INSERT INTO `sys_logininfor` VALUES ('210', 'admin', '127.0.0.1', '内网IP', 'Chrome', 'Windows 7', '0', '登录成功', '2019-09-25 16:33:56');
-INSERT INTO `sys_logininfor` VALUES ('211', 'admin', '127.0.0.1', '内网IP', 'Chrome', 'Windows 7', '0', '登录成功', '2019-09-25 16:37:15');
-INSERT INTO `sys_logininfor` VALUES ('212', 'admin', '127.0.0.1', '内网IP', 'Chrome', 'Windows 7', '0', '登录成功', '2019-09-25 16:40:12');
-INSERT INTO `sys_logininfor` VALUES ('213', 'admin', '127.0.0.1', '内网IP', 'Chrome', 'Windows 7', '0', '登录成功', '2019-09-25 16:42:46');
-INSERT INTO `sys_logininfor` VALUES ('214', 'admin', '127.0.0.1', '内网IP', 'Chrome', 'Windows 7', '0', '登录成功', '2019-09-25 16:44:29');
-INSERT INTO `sys_logininfor` VALUES ('215', 'admin', '127.0.0.1', '内网IP', 'Chrome', 'Windows 7', '1', '验证码错误', '2019-09-25 16:46:07');
-INSERT INTO `sys_logininfor` VALUES ('216', 'admin', '127.0.0.1', '内网IP', 'Chrome', 'Windows 7', '0', '登录成功', '2019-09-25 16:46:12');
-INSERT INTO `sys_logininfor` VALUES ('217', 'admin', '127.0.0.1', '内网IP', 'Chrome', 'Windows 7', '0', '登录成功', '2019-09-25 16:47:50');
-INSERT INTO `sys_logininfor` VALUES ('218', 'admin', '127.0.0.1', '内网IP', 'Chrome', 'Windows 10', '0', '登录成功', '2019-09-25 16:58:53');
 
 -- ----------------------------
--- Table structure for `sys_menu`
+-- Table structure for sys_menu
 -- ----------------------------
 DROP TABLE IF EXISTS `sys_menu`;
 CREATE TABLE `sys_menu` (
@@ -899,16 +828,16 @@ INSERT INTO `sys_menu` VALUES ('2061', '趣味知识修改', '2058', '3', '#', '
 INSERT INTO `sys_menu` VALUES ('2062', '趣味知识删除', '2058', '4', '#', '', 'F', '0', 'system:newmessage:remove', '#', 'admin', '2018-03-01 00:00:00', 'ry', '2018-03-01 00:00:00', '');
 
 -- ----------------------------
--- Table structure for `sys_newmessage`
+-- Table structure for sys_newmessage
 -- ----------------------------
 DROP TABLE IF EXISTS `sys_newmessage`;
 CREATE TABLE `sys_newmessage` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `名称` varchar(255) DEFAULT NULL,
-  `内容` varchar(255) DEFAULT NULL,
-  `链接` text,
+  `名称` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `内容` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `链接` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COMMENT='趣味知识表';
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='趣味知识表';
 
 -- ----------------------------
 -- Records of sys_newmessage
@@ -916,7 +845,7 @@ CREATE TABLE `sys_newmessage` (
 INSERT INTO `sys_newmessage` VALUES ('1', '心理学效应', '逆火效应', '<a href=\"https://baike.baidu.com/item/%E9%80%86%E7%81%AB%E6%95%88%E5%BA%94/1137384?fr=aladdin\">点我</a>');
 
 -- ----------------------------
--- Table structure for `sys_notice`
+-- Table structure for sys_notice
 -- ----------------------------
 DROP TABLE IF EXISTS `sys_notice`;
 CREATE TABLE `sys_notice` (
@@ -931,7 +860,7 @@ CREATE TABLE `sys_notice` (
   `update_time` datetime DEFAULT NULL COMMENT '更新时间',
   `remark` varchar(255) DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`notice_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='通知公告表';
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COMMENT='通知公告表';
 
 -- ----------------------------
 -- Records of sys_notice
@@ -940,7 +869,7 @@ INSERT INTO `sys_notice` VALUES ('1', '温馨提醒：2018-07-01 若依新版本
 INSERT INTO `sys_notice` VALUES ('2', '维护通知：2018-07-01 若依系统凌晨维护', '1', '维护内容', '0', 'admin', '2018-03-16 11:33:00', 'ry', '2018-03-16 11:33:00', '管理员');
 
 -- ----------------------------
--- Table structure for `sys_oper_log`
+-- Table structure for sys_oper_log
 -- ----------------------------
 DROP TABLE IF EXISTS `sys_oper_log`;
 CREATE TABLE `sys_oper_log` (
@@ -960,7 +889,7 @@ CREATE TABLE `sys_oper_log` (
   `error_msg` varchar(2000) DEFAULT '' COMMENT '错误消息',
   `oper_time` datetime DEFAULT NULL COMMENT '操作时间',
   PRIMARY KEY (`oper_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=386 DEFAULT CHARSET=utf8 COMMENT='操作日志记录';
+) ENGINE=InnoDB AUTO_INCREMENT=311 DEFAULT CHARSET=utf8 COMMENT='操作日志记录';
 
 -- ----------------------------
 -- Records of sys_oper_log
@@ -1176,96 +1105,21 @@ INSERT INTO `sys_oper_log` VALUES ('307', '代码生成', '6', 'com.ruoyi.genera
 INSERT INTO `sys_oper_log` VALUES ('308', '代码生成', '8', 'com.ruoyi.generator.controller.GenController.genCode()', 'GET', '1', 'admin', '研发部门', '/tool/gen/genCode/sys_newmessage', '127.0.0.1', '内网IP', '{ }', '0', null, '2019-09-23 16:15:14');
 INSERT INTO `sys_oper_log` VALUES ('309', '菜单管理', '2', 'com.ruoyi.web.controller.system.SysMenuController.editSave()', 'POST', '1', 'admin', '研发部门', '/system/menu/edit', '127.0.0.1', '内网IP', '{\r\n  \"menuId\" : [ \"2057\" ],\r\n  \"parentId\" : [ \"2005\" ],\r\n  \"menuType\" : [ \"C\" ],\r\n  \"menuName\" : [ \"趣味知识\" ],\r\n  \"url\" : [ \"/system/newmessage\" ],\r\n  \"target\" : [ \"menuItem\" ],\r\n  \"perms\" : [ \"system:newmessage:view\" ],\r\n  \"orderNum\" : [ \"7\" ],\r\n  \"icon\" : [ \"#\" ],\r\n  \"visible\" : [ \"0\" ]\r\n}', '0', null, '2019-09-23 16:19:46');
 INSERT INTO `sys_oper_log` VALUES ('310', '趣味知识', '1', 'com.ruoyi.web.controller.system.SysNewmessageController.addSave()', 'POST', '1', 'admin', '研发部门', '/system/newmessage/add', '127.0.0.1', '内网IP', '{\r\n  \"名称\" : [ \"心理学效应\" ],\r\n  \"内容\" : [ \"逆火效应\" ],\r\n  \"链接\" : [ \"<a  href=\'https://baike.baidu.com/item/%E9%80%86%E7%81%AB%E6%95%88%E5%BA%94/1137384?fr=aladdin\'>点我</ a>\" ]\r\n}', '0', null, '2019-09-23 16:20:15');
-INSERT INTO `sys_oper_log` VALUES ('311', '实训攻略', '2', 'com.ruoyi.web.controller.system.SysSxgl03Controller.editSave()', 'POST', '1', 'admin', '研发部门', '/system/sxgl03/edit', '127.0.0.1', '内网IP', '{\r\n  \"id\" : [ \"2\" ],\r\n  \"名称\" : [ \"周任务\" ],\r\n  \"内容\" : [ \"1、小组单位，掌握Linux的基本操作，需要具备基本的安装部署能力，具备部署项目能力； 2、小组单位，掌握VUE.JS的基本语法；\" ],\r\n  \"链接\" : [ \"\" ],\r\n  \"类型\" : [ \"自学能力\" ],\r\n  \"分值\" : [ \"50\" ],\r\n  \"模式\" : [ \"团队\" ]\r\n}', '0', null, '2019-09-24 10:39:28');
-INSERT INTO `sys_oper_log` VALUES ('312', '学生成绩', '1', 'com.ruoyi.web.controller.system.SysScoreController.addSave()', 'POST', '1', 'admin', '研发部门', '/system/score/add', '127.0.0.1', '内网IP', '{\r\n  \"studentName\" : [ \"卢本伟\" ],\r\n  \"couseName\" : [ \"语文\" ],\r\n  \"score\" : [ \"125\" ]\r\n}', '0', null, '2019-09-24 11:21:51');
-INSERT INTO `sys_oper_log` VALUES ('313', '实训攻略', '2', 'com.ruoyi.web.controller.system.SysSxgl03Controller.editSave()', 'POST', '1', 'admin', '研发部门', '/system/sxgl03/edit', '127.0.0.1', '内网IP', '{\r\n  \"id\" : [ \"2\" ],\r\n  \"名称\" : [ \"周任务\" ],\r\n  \"内容\" : [ \"1、小组单位，掌握Linux的基本操作，需要具备基本的安装部署能力，具备部署项目能力； 2、小组单位，掌握VUE.JS的基本语法；\" ],\r\n  \"链接\" : [ \"\" ],\r\n  \"类型\" : [ \"自学能力\" ],\r\n  \"分值\" : [ \"50\" ],\r\n  \"模式\" : [ \"团队\" ]\r\n}', '0', null, '2019-09-24 15:18:48');
-INSERT INTO `sys_oper_log` VALUES ('314', '实训攻略', '2', 'com.ruoyi.web.controller.system.SysSxgl03Controller.editSave()', 'POST', '1', 'admin', '研发部门', '/system/sxgl03/edit', '127.0.0.1', '内网IP', '{\r\n  \"id\" : [ \"2\" ],\r\n  \"名称\" : [ \"周任务\" ],\r\n  \"内容\" : [ \"1、小组单位，掌握Linux的基本操作，需要具备基本的安装部署能力，具备部署项目能力； 2、小组单位，掌握VUE.JS的基本语法；\" ],\r\n  \"链接\" : [ \"\" ],\r\n  \"类型\" : [ \"自学能力\" ],\r\n  \"分值\" : [ \"50\" ],\r\n  \"模式\" : [ \"团队\" ]\r\n}', '0', null, '2019-09-24 15:39:25');
-INSERT INTO `sys_oper_log` VALUES ('315', '实训攻略', '2', 'com.ruoyi.web.controller.system.SysSxgl03Controller.editSave()', 'POST', '1', 'admin', '研发部门', '/system/sxgl03/edit', '127.0.0.1', '内网IP', '{\r\n  \"id\" : [ \"11\" ],\r\n  \"名称\" : [ \"部署tomcat\" ],\r\n  \"内容\" : [ \"\" ],\r\n  \"链接\" : [ \"\" ],\r\n  \"类型\" : [ \"\" ],\r\n  \"分值\" : [ \"30\" ],\r\n  \"模式\" : [ \"个人\" ]\r\n}', '0', null, '2019-09-24 15:39:34');
-INSERT INTO `sys_oper_log` VALUES ('316', '实训攻略', '2', 'com.ruoyi.web.controller.system.SysSxgl03Controller.editSave()', 'POST', '1', 'admin', '研发部门', '/system/sxgl03/edit', '127.0.0.1', '内网IP', '{\r\n  \"id\" : [ \"4\" ],\r\n  \"名称\" : [ \"每日一文\" ],\r\n  \"内容\" : [ \"w3school 大部分程序员的入门选择\" ],\r\n  \"链接\" : [ \"<a href=\\\"https://www.w3school.com.cn/\\\">点我</a>\" ],\r\n  \"类型\" : [ \"\" ],\r\n  \"分值\" : [ \"21\" ],\r\n  \"模式\" : [ \"个人\" ]\r\n}', '0', null, '2019-09-24 15:51:08');
-INSERT INTO `sys_oper_log` VALUES ('317', '实训攻略', '2', 'com.ruoyi.web.controller.system.SysSxgl03Controller.editSave()', 'POST', '1', 'admin', '研发部门', '/system/sxgl03/edit', '127.0.0.1', '内网IP', '{\r\n  \"id\" : [ \"4\" ],\r\n  \"名称\" : [ \"每日一文\" ],\r\n  \"内容\" : [ \"w3school 大部分程序员的入门选择\" ],\r\n  \"链接\" : [ \"<a href=\\\"https://www.w3school.com.cn/\\\">点我</a>\" ],\r\n  \"类型\" : [ \"\" ],\r\n  \"分值\" : [ \"10\" ],\r\n  \"模式\" : [ \"个人\" ]\r\n}', '0', null, '2019-09-24 15:51:25');
-INSERT INTO `sys_oper_log` VALUES ('318', '实训攻略', '2', 'com.ruoyi.web.controller.system.SysSxgl03Controller.editSave()', 'POST', '1', 'admin', '研发部门', '/system/sxgl03/edit', '127.0.0.1', '内网IP', '{\r\n  \"id\" : [ \"2\" ],\r\n  \"名称\" : [ \"周任务\" ],\r\n  \"内容\" : [ \"1、小组单位，掌握Linux的基本操作，需要具备基本的安装部署能力，具备部署项目能力； 2、小组单位，掌握VUE.JS的基本语法；\" ],\r\n  \"链接\" : [ \"\" ],\r\n  \"类型\" : [ \"自学能力\" ],\r\n  \"分值\" : [ \"50\" ],\r\n  \"模式\" : [ \"团队\" ]\r\n}', '0', null, '2019-09-24 15:56:30');
-INSERT INTO `sys_oper_log` VALUES ('319', '实训攻略', '2', 'com.ruoyi.web.controller.system.SysSxgl03Controller.editSave()', 'POST', '1', 'admin', '研发部门', '/system/sxgl03/edit', '127.0.0.1', '内网IP', '{\r\n  \"id\" : [ \"2\" ],\r\n  \"名称\" : [ \"周任务\" ],\r\n  \"内容\" : [ \"1、小组单位，掌握Linux的基本操作，需要具备基本的安装部署能力，具备部署项目能力； 2、小组单位，掌握VUE.JS的基本语法；\" ],\r\n  \"链接\" : [ \"\" ],\r\n  \"类型\" : [ \"自学能力\" ],\r\n  \"分值\" : [ \"50\" ],\r\n  \"模式\" : [ \"团队\" ]\r\n}', '0', null, '2019-09-24 18:01:23');
-INSERT INTO `sys_oper_log` VALUES ('320', '实训攻略', '2', 'com.ruoyi.web.controller.system.SysSxgl03Controller.editSave()', 'POST', '1', 'admin', '研发部门', '/system/sxgl03/edit', '127.0.0.1', '内网IP', '{\r\n  \"id\" : [ \"3\" ],\r\n  \"名称\" : [ \"第一天\" ],\r\n  \"内容\" : [ \"\" ],\r\n  \"链接\" : [ \"\" ],\r\n  \"类型\" : [ \"\" ],\r\n  \"分值\" : [ \"\" ],\r\n  \"模式\" : [ \"个人\" ]\r\n}', '0', null, '2019-09-24 18:02:03');
-INSERT INTO `sys_oper_log` VALUES ('321', '实训攻略', '2', 'com.ruoyi.web.controller.system.SysSxgl03Controller.editSave()', 'POST', '1', 'admin', '研发部门', '/system/sxgl03/edit', '127.0.0.1', '内网IP', '{\r\n  \"id\" : [ \"9\" ],\r\n  \"名称\" : [ \"\" ],\r\n  \"内容\" : [ \"\" ],\r\n  \"链接\" : [ \"\" ],\r\n  \"类型\" : [ \"\" ],\r\n  \"分值\" : [ \"\" ],\r\n  \"模式\" : [ \"\" ]\r\n}', '1', '\r\n### Error updating database.  Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'where id = 9\' at line 3\r\n### The error may involve com.ruoyi.system.mapper.SysSxgl03Mapper.updateSysSxgl03-Inline\r\n### The error occurred while setting parameters\r\n### SQL: update sys_sxgl03                    where id = ?\r\n### Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'where id = 9\' at line 3\n; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'where id = 9\' at line 3', '2019-09-24 18:05:02');
-INSERT INTO `sys_oper_log` VALUES ('322', '实训攻略', '1', 'com.ruoyi.web.controller.system.SysSxgl03Controller.addSave()', 'POST', '1', 'admin', '研发部门', '/system/sxgl03/add', '127.0.0.1', '内网IP', '{\r\n  \"名称\" : [ \"测试巷\" ],\r\n  \"内容\" : [ \"\" ],\r\n  \"链接\" : [ \"\" ],\r\n  \"类型\" : [ \"\" ],\r\n  \"分值\" : [ \"\" ],\r\n  \"模式\" : [ \"\" ]\r\n}', '0', null, '2019-09-24 18:05:27');
-INSERT INTO `sys_oper_log` VALUES ('323', '实训攻略', '2', 'com.ruoyi.web.controller.system.SysSxgl03Controller.editSave()', 'POST', '1', 'admin', '研发部门', '/system/sxgl03/edit', '127.0.0.1', '内网IP', '{\r\n  \"id\" : [ \"21\" ],\r\n  \"名称\" : [ \"测试巷\" ],\r\n  \"内容\" : [ \"1\" ],\r\n  \"链接\" : [ \"1\" ],\r\n  \"类型\" : [ \"1\" ],\r\n  \"分值\" : [ \"1\" ],\r\n  \"模式\" : [ \"1\" ]\r\n}', '0', null, '2019-09-24 18:05:34');
-INSERT INTO `sys_oper_log` VALUES ('324', '实训攻略', '2', 'com.ruoyi.web.controller.system.SysSxgl03Controller.editSave()', 'POST', '1', 'admin', '研发部门', '/system/sxgl03/edit', '127.0.0.1', '内网IP', '{\r\n  \"id\" : [ \"21\" ],\r\n  \"名称\" : [ \"测试巷\" ],\r\n  \"内容\" : [ \"1\" ],\r\n  \"链接\" : [ \"1\" ],\r\n  \"类型\" : [ \"1\" ],\r\n  \"分值\" : [ \"1\" ],\r\n  \"模式\" : [ \"1\" ]\r\n}', '0', null, '2019-09-24 18:07:02');
-INSERT INTO `sys_oper_log` VALUES ('325', '实训攻略', '3', 'com.ruoyi.web.controller.system.SysSxgl03Controller.remove()', 'POST', '1', 'admin', '研发部门', '/system/sxgl03/remove', '127.0.0.1', '内网IP', '{\r\n  \"ids\" : [ \"21\" ]\r\n}', '0', null, '2019-09-25 09:50:37');
-INSERT INTO `sys_oper_log` VALUES ('326', '实训攻略', '1', 'com.ruoyi.web.controller.system.SysSxgl03Controller.addSave()', 'POST', '1', 'admin', '研发部门', '/system/sxgl03/add', '127.0.0.1', '内网IP', '{\r\n  \"名称\" : [ \"测试巷\" ],\r\n  \"内容\" : [ \"1\" ],\r\n  \"链接\" : [ \"\" ],\r\n  \"类型\" : [ \"自学能力\" ],\r\n  \"分值\" : [ \"50\" ],\r\n  \"模式\" : [ \"个人\" ]\r\n}', '0', null, '2019-09-25 09:57:10');
-INSERT INTO `sys_oper_log` VALUES ('327', '实训攻略', '2', 'com.ruoyi.web.controller.system.SysSxgl03Controller.editSave()', 'POST', '1', 'admin', '研发部门', '/system/sxgl03/edit', '127.0.0.1', '内网IP', '{\r\n  \"id\" : [ \"22\" ],\r\n  \"名称\" : [ \"测试巷\" ],\r\n  \"内容\" : [ \"1\" ],\r\n  \"链接\" : [ \"\" ],\r\n  \"类型\" : [ \"自学能力\" ],\r\n  \"分值\" : [ \"50\" ],\r\n  \"模式\" : [ \"个人\" ]\r\n}', '0', null, '2019-09-25 09:57:15');
-INSERT INTO `sys_oper_log` VALUES ('328', '实训攻略', '2', 'com.ruoyi.web.controller.system.SysSxgl03Controller.editSave()', 'POST', '1', 'admin', '研发部门', '/system/sxgl03/edit', '127.0.0.1', '内网IP', '{\r\n  \"id\" : [ \"22\" ],\r\n  \"名称\" : [ \"测试巷\" ],\r\n  \"内容\" : [ \"1\" ],\r\n  \"链接\" : [ \"\" ],\r\n  \"类型\" : [ \"自学能力\" ],\r\n  \"分值\" : [ \"50\" ],\r\n  \"模式\" : [ \"个人\" ]\r\n}', '0', null, '2019-09-25 10:06:08');
-INSERT INTO `sys_oper_log` VALUES ('329', '实训攻略', '2', 'com.ruoyi.web.controller.system.SysSxgl03Controller.editSave()', 'POST', '1', 'admin', '研发部门', '/system/sxgl03/edit', '127.0.0.1', '内网IP', '{\r\n  \"id\" : [ \"22\" ],\r\n  \"名称\" : [ \"测试巷\" ],\r\n  \"内容\" : [ \"1\" ],\r\n  \"链接\" : [ \"\" ],\r\n  \"类型\" : [ \"自学能力\" ],\r\n  \"分值\" : [ \"50\" ],\r\n  \"模式\" : [ \"个人\" ]\r\n}', '0', null, '2019-09-25 10:13:15');
-INSERT INTO `sys_oper_log` VALUES ('330', '代码生成', '3', 'com.ruoyi.generator.controller.GenController.remove()', 'POST', '1', 'admin', '研发部门', '/tool/gen/remove', '127.0.0.1', '内网IP', '{\r\n  \"ids\" : [ \"1\" ]\r\n}', '0', null, '2019-09-25 10:18:07');
-INSERT INTO `sys_oper_log` VALUES ('331', '代码生成', '6', 'com.ruoyi.generator.controller.GenController.importTableSave()', 'POST', '1', 'admin', '研发部门', '/tool/gen/importTable', '127.0.0.1', '内网IP', '{\r\n  \"tables\" : [ \"sys_score\" ]\r\n}', '0', null, '2019-09-25 10:18:13');
-INSERT INTO `sys_oper_log` VALUES ('332', '代码生成', '8', 'com.ruoyi.generator.controller.GenController.genCode()', 'GET', '1', 'admin', '研发部门', '/tool/gen/genCode/sys_score', '127.0.0.1', '内网IP', '{ }', '0', null, '2019-09-25 10:19:18');
-INSERT INTO `sys_oper_log` VALUES ('333', '实训攻略', '2', 'com.ruoyi.web.controller.system.SysSxgl03Controller.editSave()', 'POST', '1', 'admin', '研发部门', '/system/sxgl03/edit', '127.0.0.1', '内网IP', '{\r\n  \"id\" : [ \"22\" ],\r\n  \"名称\" : [ \"测试巷\" ],\r\n  \"内容\" : [ \"1\" ],\r\n  \"链接\" : [ \"\" ],\r\n  \"类型\" : [ \"自学能力\" ],\r\n  \"分值\" : [ \"50\" ],\r\n  \"模式\" : [ \"个人\" ]\r\n}', '0', null, '2019-09-25 10:27:40');
-INSERT INTO `sys_oper_log` VALUES ('334', '实训攻略', '2', 'com.ruoyi.web.controller.system.SysSxgl03Controller.editSave()', 'POST', '1', 'admin', '研发部门', '/system/sxgl03/edit', '127.0.0.1', '内网IP', '{\r\n  \"id\" : [ \"22\" ],\r\n  \"名称\" : [ \"\" ],\r\n  \"内容\" : [ \"\" ],\r\n  \"链接\" : [ \"\" ],\r\n  \"类型\" : [ \"\" ],\r\n  \"分值\" : [ \"50\" ],\r\n  \"模式\" : [ \"\" ]\r\n}', '0', null, '2019-09-25 10:28:25');
-INSERT INTO `sys_oper_log` VALUES ('335', '实训攻略', '2', 'com.ruoyi.web.controller.system.SysSxgl03Controller.editSave()', 'POST', '1', 'admin', '研发部门', '/system/sxgl03/edit', '127.0.0.1', '内网IP', '{\r\n  \"id\" : [ \"22\" ],\r\n  \"名称\" : [ \"\" ],\r\n  \"内容\" : [ \"\" ],\r\n  \"链接\" : [ \"\" ],\r\n  \"类型\" : [ \"\" ],\r\n  \"分值\" : [ \"50\" ],\r\n  \"模式\" : [ \"\" ]\r\n}', '0', null, '2019-09-25 10:39:21');
-INSERT INTO `sys_oper_log` VALUES ('336', '实训攻略', '2', 'com.ruoyi.web.controller.system.SysSxgl03Controller.editSave()', 'POST', '1', 'admin', '研发部门', '/system/sxgl03/edit', '127.0.0.1', '内网IP', '{\r\n  \"id\" : [ \"22\" ],\r\n  \"名称\" : [ \"\" ],\r\n  \"内容\" : [ \"\" ],\r\n  \"链接\" : [ \"\" ],\r\n  \"类型\" : [ \"\" ],\r\n  \"分值\" : [ \"50\" ],\r\n  \"模式\" : [ \"\" ]\r\n}', '0', null, '2019-09-25 10:50:15');
-INSERT INTO `sys_oper_log` VALUES ('337', '实训攻略', '2', 'com.ruoyi.web.controller.system.SysSxgl03Controller.editSave()', 'POST', '1', 'admin', '研发部门', '/system/sxgl03/edit', '127.0.0.1', '内网IP', '{\r\n  \"id\" : [ \"22\" ],\r\n  \"名称\" : [ \"测试巷\" ],\r\n  \"内容\" : [ \"1\" ],\r\n  \"链接\" : [ \"\" ],\r\n  \"类型\" : [ \"自学能力\" ],\r\n  \"分值\" : [ \"50\" ],\r\n  \"模式\" : [ \"个人\" ]\r\n}', '0', null, '2019-09-25 10:51:29');
-INSERT INTO `sys_oper_log` VALUES ('338', '实训攻略', '2', 'com.ruoyi.web.controller.system.SysSxgl03Controller.editSave()', 'POST', '1', 'admin', '研发部门', '/system/sxgl03/edit', '127.0.0.1', '内网IP', '{\r\n  \"id\" : [ \"22\" ],\r\n  \"名称\" : [ \"测试巷\" ],\r\n  \"内容\" : [ \"1\" ],\r\n  \"链接\" : [ \"\" ],\r\n  \"类型\" : [ \"自学能力\" ],\r\n  \"分值\" : [ \"50\" ],\r\n  \"模式\" : [ \"个人\" ]\r\n}', '0', null, '2019-09-25 10:54:59');
-INSERT INTO `sys_oper_log` VALUES ('339', '实训攻略', '2', 'com.ruoyi.web.controller.system.SysSxgl03Controller.editSave()', 'POST', '1', 'admin', '研发部门', '/system/sxgl03/edit', '127.0.0.1', '内网IP', '{\r\n  \"id\" : [ \"22\" ],\r\n  \"名称\" : [ \"\" ],\r\n  \"内容\" : [ \"\" ],\r\n  \"链接\" : [ \"\" ],\r\n  \"类型\" : [ \"\" ],\r\n  \"分值\" : [ \"50\" ],\r\n  \"模式\" : [ \"\" ]\r\n}', '0', null, '2019-09-25 10:55:16');
-INSERT INTO `sys_oper_log` VALUES ('340', '实训攻略', '2', 'com.ruoyi.web.controller.system.SysSxgl03Controller.editSave()', 'POST', '1', 'admin', '研发部门', '/system/sxgl03/edit', '127.0.0.1', '内网IP', '{\r\n  \"id\" : [ \"22\" ],\r\n  \"名称\" : [ \"测试巷\" ],\r\n  \"内容\" : [ \"1\" ],\r\n  \"链接\" : [ \"\" ],\r\n  \"类型\" : [ \"自学能力\" ],\r\n  \"分值\" : [ \"50\" ],\r\n  \"模式\" : [ \"个人\" ]\r\n}', '0', null, '2019-09-25 11:04:34');
-INSERT INTO `sys_oper_log` VALUES ('341', '实训攻略', '2', 'com.ruoyi.web.controller.system.SysSxgl03Controller.editSave()', 'POST', '1', 'admin', '研发部门', '/system/sxgl03/edit', '127.0.0.1', '内网IP', '{\r\n  \"id\" : [ \"22\" ],\r\n  \"名称\" : [ \"测试巷\" ],\r\n  \"内容\" : [ \"1\" ],\r\n  \"链接\" : [ \"\" ],\r\n  \"类型\" : [ \"自学能力\" ],\r\n  \"分值\" : [ \"502\" ],\r\n  \"模式\" : [ \"个人\" ]\r\n}', '0', null, '2019-09-25 11:05:17');
-INSERT INTO `sys_oper_log` VALUES ('342', '实训攻略', '2', 'com.ruoyi.web.controller.system.SysSxgl03Controller.editSave()', 'POST', '1', 'admin', '研发部门', '/system/sxgl03/edit', '127.0.0.1', '内网IP', '{\r\n  \"id\" : [ \"22\" ],\r\n  \"名称\" : [ \"测试巷\" ],\r\n  \"内容\" : [ \"1\" ],\r\n  \"链接\" : [ \"\" ],\r\n  \"类型\" : [ \"自学能力\" ],\r\n  \"分值\" : [ \"502\" ],\r\n  \"模式\" : [ \"个人\" ]\r\n}', '1', '\r\n### Error updating database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column \'id\' in \'where clause\'\r\n### The error may involve com.ruoyi.system.mapper.SysSxgl03Mapper.updateSysSxgl03-Inline\r\n### The error occurred while setting parameters\r\n### SQL: update sys_score          SET 名称 = ?,             内容 = ?,                          类型 = ?,             分值 = ?,             模式 = ?          where id = ?\r\n### Cause: java.sql.SQLSyntaxErrorException: Unknown column \'id\' in \'where clause\'\n; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column \'id\' in \'where clause\'', '2019-09-25 11:09:19');
-INSERT INTO `sys_oper_log` VALUES ('343', '实训攻略', '2', 'com.ruoyi.web.controller.system.SysSxgl03Controller.editSave()', 'POST', '1', 'admin', '研发部门', '/system/sxgl03/edit', '127.0.0.1', '内网IP', '{\r\n  \"id\" : [ \"22\" ],\r\n  \"名称\" : [ \"\" ],\r\n  \"内容\" : [ \"\" ],\r\n  \"链接\" : [ \"\" ],\r\n  \"类型\" : [ \"\" ],\r\n  \"分值\" : [ \"502\" ],\r\n  \"模式\" : [ \"\" ]\r\n}', '1', '\r\n### Error updating database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column \'id\' in \'where clause\'\r\n### The error may involve com.ruoyi.system.mapper.SysSxgl03Mapper.updateSysSxgl03-Inline\r\n### The error occurred while setting parameters\r\n### SQL: update sys_score          SET 分值 = ?          where id = ?\r\n### Cause: java.sql.SQLSyntaxErrorException: Unknown column \'id\' in \'where clause\'\n; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column \'id\' in \'where clause\'', '2019-09-25 11:09:28');
-INSERT INTO `sys_oper_log` VALUES ('344', '实训攻略', '2', 'com.ruoyi.web.controller.system.SysSxgl03Controller.editSave()', 'POST', '1', 'admin', '研发部门', '/system/sxgl03/edit', '127.0.0.1', '内网IP', '{\r\n  \"id\" : [ \"22\" ],\r\n  \"名称\" : [ \"测试巷\" ],\r\n  \"内容\" : [ \"1\" ],\r\n  \"链接\" : [ \"\" ],\r\n  \"类型\" : [ \"自学能力\" ],\r\n  \"分值\" : [ \"502\" ],\r\n  \"模式\" : [ \"个人\" ]\r\n}', '1', '\r\n### Error updating database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column \'名称\' in \'field list\'\r\n### The error may involve com.ruoyi.system.mapper.SysSxgl03Mapper.updateSysSxgl03-Inline\r\n### The error occurred while setting parameters\r\n### SQL: update sys_score          SET 名称 = ?,             内容 = ?,                          类型 = ?,             分值 = ?,             模式 = ?\r\n### Cause: java.sql.SQLSyntaxErrorException: Unknown column \'名称\' in \'field list\'\n; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column \'名称\' in \'field list\'', '2019-09-25 11:14:36');
-INSERT INTO `sys_oper_log` VALUES ('345', '实训攻略', '2', 'com.ruoyi.web.controller.system.SysSxgl03Controller.editSave()', 'POST', '1', 'admin', '研发部门', '/system/sxgl03/edit', '127.0.0.1', '内网IP', '{\r\n  \"id\" : [ \"22\" ],\r\n  \"名称\" : [ \"\" ],\r\n  \"内容\" : [ \"\" ],\r\n  \"链接\" : [ \"\" ],\r\n  \"类型\" : [ \"\" ],\r\n  \"分值\" : [ \"111\" ],\r\n  \"模式\" : [ \"\" ]\r\n}', '0', null, '2019-09-25 11:14:44');
-INSERT INTO `sys_oper_log` VALUES ('346', '实训攻略', '2', 'com.ruoyi.web.controller.system.SysSxgl03Controller.editSave()', 'POST', '1', 'admin', '研发部门', '/system/sxgl03/edit', '127.0.0.1', '内网IP', '{\r\n  \"id\" : [ \"22\" ],\r\n  \"名称\" : [ \"\" ],\r\n  \"内容\" : [ \"\" ],\r\n  \"链接\" : [ \"\" ],\r\n  \"类型\" : [ \"\" ],\r\n  \"分值\" : [ \"5022472\" ],\r\n  \"模式\" : [ \"\" ]\r\n}', '0', null, '2019-09-25 11:15:05');
-INSERT INTO `sys_oper_log` VALUES ('347', '实训攻略', '2', 'com.ruoyi.web.controller.system.SysSxgl03Controller.editSave()', 'POST', '1', 'admin', '研发部门', '/system/sxgl03/edit', '127.0.0.1', '内网IP', '{\r\n  \"id\" : [ \"22\" ],\r\n  \"名称\" : [ \"测试巷\" ],\r\n  \"内容\" : [ \"1\" ],\r\n  \"链接\" : [ \"\" ],\r\n  \"类型\" : [ \"自学能力\" ],\r\n  \"分值\" : [ \"502\" ],\r\n  \"模式\" : [ \"个人\" ]\r\n}', '0', null, '2019-09-25 11:41:03');
-INSERT INTO `sys_oper_log` VALUES ('348', '实训攻略', '2', 'com.ruoyi.web.controller.system.SysSxgl03Controller.editSave()', 'POST', '1', 'admin', '研发部门', '/system/sxgl03/edit', '127.0.0.1', '内网IP', '{\r\n  \"id\" : [ \"22\" ],\r\n  \"名称\" : [ \"测试巷\" ],\r\n  \"内容\" : [ \"1\" ],\r\n  \"链接\" : [ \"\" ],\r\n  \"类型\" : [ \"自学能力\" ],\r\n  \"分值\" : [ \"502\" ],\r\n  \"模式\" : [ \"个人\" ]\r\n}', '0', null, '2019-09-25 11:45:45');
-INSERT INTO `sys_oper_log` VALUES ('349', '实训攻略', '2', 'com.ruoyi.web.controller.system.SysSxgl03Controller.editSave()', 'POST', '1', 'admin', '研发部门', '/system/sxgl03/edit', '127.0.0.1', '内网IP', '{\r\n  \"id\" : [ \"22\" ],\r\n  \"名称\" : [ \"测试巷\" ],\r\n  \"内容\" : [ \"1\" ],\r\n  \"链接\" : [ \"\" ],\r\n  \"类型\" : [ \"自学能力\" ],\r\n  \"分值\" : [ \"502\" ],\r\n  \"模式\" : [ \"个人\" ]\r\n}', '0', null, '2019-09-25 11:53:02');
-INSERT INTO `sys_oper_log` VALUES ('350', '实训攻略', '2', 'com.ruoyi.web.controller.system.SysSxgl03Controller.editSave()', 'POST', '1', 'admin', '研发部门', '/system/sxgl03/edit', '127.0.0.1', '内网IP', '{\r\n  \"id\" : [ \"22\" ],\r\n  \"名称\" : [ \"测试巷\" ],\r\n  \"内容\" : [ \"1\" ],\r\n  \"链接\" : [ \"\" ],\r\n  \"类型\" : [ \"自学能力\" ],\r\n  \"分值\" : [ \"502\" ],\r\n  \"模式\" : [ \"个人\" ]\r\n}', '0', null, '2019-09-25 14:56:49');
-INSERT INTO `sys_oper_log` VALUES ('351', '实训攻略', '2', 'com.ruoyi.web.controller.system.SysSxgl03Controller.editSave()', 'POST', '1', 'admin', '研发部门', '/system/sxgl03/edit', '127.0.0.1', '内网IP', '{\r\n  \"id\" : [ \"2\" ],\r\n  \"名称\" : [ \"周任务\" ],\r\n  \"内容\" : [ \"1、小组单位，掌握Linux的基本操作，需要具备基本的安装部署能力，具备部署项目能力； 2、小组单位，掌握VUE.JS的基本语法；\" ],\r\n  \"链接\" : [ \"\" ],\r\n  \"类型\" : [ \"自学能力\" ],\r\n  \"分值\" : [ \"50\" ],\r\n  \"模式\" : [ \"团队\" ]\r\n}', '0', null, '2019-09-25 15:22:52');
-INSERT INTO `sys_oper_log` VALUES ('352', '实训攻略', '2', 'com.ruoyi.web.controller.system.SysSxgl03Controller.editSave()', 'POST', '1', 'admin', '研发部门', '/system/sxgl03/edit', '127.0.0.1', '内网IP', '{\r\n  \"id\" : [ \"22\" ],\r\n  \"名称\" : [ \"测试巷\" ],\r\n  \"内容\" : [ \"1\" ],\r\n  \"链接\" : [ \"\" ],\r\n  \"类型\" : [ \"自学能力\" ],\r\n  \"分值\" : [ \"502\" ],\r\n  \"模式\" : [ \"个人\" ]\r\n}', '0', null, '2019-09-25 15:30:25');
-INSERT INTO `sys_oper_log` VALUES ('353', '实训攻略', '1', 'com.ruoyi.web.controller.system.SysSxgl03Controller.addSave()', 'POST', '1', 'admin', '研发部门', '/system/sxgl03/add', '127.0.0.1', '内网IP', '{\r\n  \"名称\" : [ \"\" ],\r\n  \"内容\" : [ \"\" ],\r\n  \"链接\" : [ \"\" ],\r\n  \"类型\" : [ \"\" ],\r\n  \"分值\" : [ \"\" ],\r\n  \"模式\" : [ \"\" ]\r\n}', '1', '\r\n### Error updating database.  Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'\' at line 1\r\n### The error may involve com.ruoyi.system.mapper.SysSxgl03Mapper.insertSysSxgl03-Inline\r\n### The error occurred while setting parameters\r\n### SQL: insert into sys_sxgl03\r\n### Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'\' at line 1\n; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'\' at line 1', '2019-09-25 15:38:11');
-INSERT INTO `sys_oper_log` VALUES ('354', '实训攻略', '1', 'com.ruoyi.web.controller.system.SysSxgl03Controller.addSave()', 'POST', '1', 'admin', '研发部门', '/system/sxgl03/add', '127.0.0.1', '内网IP', '{\r\n  \"名称\" : [ \"\" ],\r\n  \"内容\" : [ \"\" ],\r\n  \"链接\" : [ \"\" ],\r\n  \"类型\" : [ \"\" ],\r\n  \"分值\" : [ \"11\" ],\r\n  \"模式\" : [ \"\" ]\r\n}', '0', null, '2019-09-25 15:38:14');
-INSERT INTO `sys_oper_log` VALUES ('355', '实训攻略', '2', 'com.ruoyi.web.controller.system.SysSxgl03Controller.editSave()', 'POST', '1', 'admin', '研发部门', '/system/sxgl03/edit', '127.0.0.1', '内网IP', '{\r\n  \"id\" : [ \"22\" ],\r\n  \"名称\" : [ \"测试巷\" ],\r\n  \"内容\" : [ \"1\" ],\r\n  \"链接\" : [ \"\" ],\r\n  \"类型\" : [ \"自学能力\" ],\r\n  \"分值\" : [ \"502\" ],\r\n  \"模式\" : [ \"个人\" ]\r\n}', '0', null, '2019-09-25 15:40:21');
-INSERT INTO `sys_oper_log` VALUES ('356', '实训攻略', '2', 'com.ruoyi.web.controller.system.SysSxgl03Controller.editSave()', 'POST', '1', 'admin', '研发部门', '/system/sxgl03/edit', '127.0.0.1', '内网IP', '{\r\n  \"id\" : [ \"22\" ],\r\n  \"名称\" : [ \"测试巷\" ],\r\n  \"内容\" : [ \"1\" ],\r\n  \"链接\" : [ \"\" ],\r\n  \"类型\" : [ \"自学能力\" ],\r\n  \"分值\" : [ \"502\" ],\r\n  \"模式\" : [ \"个人\" ]\r\n}', '0', null, '2019-09-25 15:43:51');
-INSERT INTO `sys_oper_log` VALUES ('357', '实训攻略', '2', 'com.ruoyi.web.controller.system.SysSxgl03Controller.accomplishSave()', 'POST', '1', 'admin', '研发部门', '/system/sxgl03/accomplish', '127.0.0.1', '内网IP', '{\r\n  \"id\" : [ \"22\" ],\r\n  \"名称\" : [ \"测试巷\" ],\r\n  \"内容\" : [ \"1\" ],\r\n  \"链接\" : [ \"\" ],\r\n  \"类型\" : [ \"自学能力\" ],\r\n  \"分值\" : [ \"502\" ],\r\n  \"模式\" : [ \"个人\" ]\r\n}', '1', 'nested exception is org.apache.ibatis.reflection.ReflectionException: There is no getter for property named \'studentName\' in \'class com.ruoyi.system.domain.SysSxgl03\'', '2019-09-25 16:30:29');
-INSERT INTO `sys_oper_log` VALUES ('358', '实训攻略', '2', 'com.ruoyi.web.controller.system.SysSxgl03Controller.accomplishSave()', 'POST', '1', 'admin', '研发部门', '/system/sxgl03/accomplish', '127.0.0.1', '内网IP', '{\r\n  \"id\" : [ \"22\" ],\r\n  \"名称\" : [ \"\" ],\r\n  \"内容\" : [ \"\" ],\r\n  \"链接\" : [ \"\" ],\r\n  \"类型\" : [ \"\" ],\r\n  \"分值\" : [ \"502\" ],\r\n  \"模式\" : [ \"\" ]\r\n}', '1', 'nested exception is org.apache.ibatis.reflection.ReflectionException: There is no getter for property named \'studentName\' in \'class com.ruoyi.system.domain.SysSxgl03\'', '2019-09-25 16:30:45');
-INSERT INTO `sys_oper_log` VALUES ('359', '实训攻略', '2', 'com.ruoyi.web.controller.system.SysSxgl03Controller.accomplishSave()', 'POST', '1', 'admin', '研发部门', '/system/sxgl03/accomplish', '127.0.0.1', '内网IP', '{\r\n  \"id\" : [ \"22\" ],\r\n  \"名称\" : [ \"测试巷\" ],\r\n  \"分值\" : [ \"502\" ]\r\n}', '1', 'nested exception is org.apache.ibatis.reflection.ReflectionException: There is no getter for property named \'studentName\' in \'class com.ruoyi.system.domain.SysSxgl03\'', '2019-09-25 16:31:57');
-INSERT INTO `sys_oper_log` VALUES ('360', '实训攻略', '2', 'com.ruoyi.web.controller.system.SysSxgl03Controller.accomplishSave()', 'POST', '1', 'admin', '研发部门', '/system/sxgl03/accomplish', '127.0.0.1', '内网IP', '{\r\n  \"id\" : [ \"22\" ],\r\n  \"名称\" : [ \"\" ],\r\n  \"分值\" : [ \"502\" ]\r\n}', '1', 'nested exception is org.apache.ibatis.reflection.ReflectionException: There is no getter for property named \'studentName\' in \'class com.ruoyi.system.domain.SysSxgl03\'', '2019-09-25 16:32:08');
-INSERT INTO `sys_oper_log` VALUES ('361', '实训攻略', '2', 'com.ruoyi.web.controller.system.SysSxgl03Controller.accomplishSave()', 'POST', '1', 'admin', '研发部门', '/system/sxgl03/accomplish', '127.0.0.1', '内网IP', '{\r\n  \"id\" : [ \"19\" ],\r\n  \"名称\" : [ \"第五天\" ],\r\n  \"分值\" : [ \"\" ]\r\n}', '1', 'nested exception is org.apache.ibatis.reflection.ReflectionException: There is no getter for property named \'studentName\' in \'class com.ruoyi.system.domain.SysSxgl03\'', '2019-09-25 16:32:26');
-INSERT INTO `sys_oper_log` VALUES ('362', '实训攻略', '2', 'com.ruoyi.web.controller.system.SysSxgl03Controller.accomplishSave()', 'POST', '1', 'admin', '研发部门', '/system/sxgl03/accomplish', '127.0.0.1', '内网IP', '{\r\n  \"id\" : [ \"22\" ],\r\n  \"名称\" : [ \"测试巷\" ],\r\n  \"分值\" : [ \"502\" ]\r\n}', '1', 'nested exception is org.apache.ibatis.reflection.ReflectionException: There is no getter for property named \'studentName\' in \'class com.ruoyi.system.domain.SysSxgl03\'', '2019-09-25 16:34:05');
-INSERT INTO `sys_oper_log` VALUES ('363', '实训攻略', '2', 'com.ruoyi.web.controller.system.SysSxgl03Controller.accomplishSave()', 'POST', '1', 'admin', '研发部门', '/system/sxgl03/accomplish', '127.0.0.1', '内网IP', '{\r\n  \"id\" : [ \"22\" ],\r\n  \"名称\" : [ \"\" ],\r\n  \"分值\" : [ \"502\" ]\r\n}', '1', 'nested exception is org.apache.ibatis.reflection.ReflectionException: There is no getter for property named \'studentName\' in \'class com.ruoyi.system.domain.SysSxgl03\'', '2019-09-25 16:34:08');
-INSERT INTO `sys_oper_log` VALUES ('364', '实训攻略', '2', 'com.ruoyi.web.controller.system.SysSxgl03Controller.accomplishSave()', 'POST', '1', 'admin', '研发部门', '/system/sxgl03/accomplish', '127.0.0.1', '内网IP', '{\r\n  \"id\" : [ \"22\" ],\r\n  \"名称\" : [ \"测试巷\" ],\r\n  \"分值\" : [ \"502\" ]\r\n}', '0', null, '2019-09-25 16:37:21');
-INSERT INTO `sys_oper_log` VALUES ('365', '实训攻略', '2', 'com.ruoyi.web.controller.system.SysSxgl03Controller.accomplishSave()', 'POST', '1', 'admin', '研发部门', '/system/sxgl03/accomplish', '127.0.0.1', '内网IP', '{\r\n  \"id\" : [ \"23\" ],\r\n  \"名称\" : [ \"周任务11111111111111111\" ],\r\n  \"分值\" : [ \"11\" ]\r\n}', '0', null, '2019-09-25 16:38:22');
-INSERT INTO `sys_oper_log` VALUES ('366', '实训攻略', '2', 'com.ruoyi.web.controller.system.SysSxgl03Controller.accomplishSave()', 'POST', '1', 'admin', '研发部门', '/system/sxgl03/accomplish', '127.0.0.1', '内网IP', '{\r\n  \"id\" : [ \"23\" ],\r\n  \"名称\" : [ \"\" ],\r\n  \"分值\" : [ \"111111\" ]\r\n}', '0', null, '2019-09-25 16:38:42');
-INSERT INTO `sys_oper_log` VALUES ('367', '实训攻略', '2', 'com.ruoyi.web.controller.system.SysSxgl03Controller.accomplishSave()', 'POST', '1', 'admin', '研发部门', '/system/sxgl03/accomplish', '127.0.0.1', '内网IP', '{\r\n  \"id\" : [ \"23\" ],\r\n  \"名称\" : [ \"\" ],\r\n  \"分值\" : [ \"11124761874\" ]\r\n}', '1', 'nested exception is org.apache.ibatis.reflection.ReflectionException: There is no getter for property named \'studentName\' in \'class com.ruoyi.system.domain.SysSxgl03\'', '2019-09-25 16:40:46');
-INSERT INTO `sys_oper_log` VALUES ('368', '实训攻略', '2', 'com.ruoyi.web.controller.system.SysSxgl03Controller.accomplishSave()', 'POST', '1', 'admin', '研发部门', '/system/sxgl03/accomplish', '127.0.0.1', '内网IP', '{\r\n  \"id\" : [ \"23\" ],\r\n  \"名称\" : [ \"\" ],\r\n  \"分值\" : [ \"111247\" ]\r\n}', '1', 'nested exception is org.apache.ibatis.reflection.ReflectionException: There is no getter for property named \'studentName\' in \'class com.ruoyi.system.domain.SysSxgl03\'', '2019-09-25 16:40:55');
-INSERT INTO `sys_oper_log` VALUES ('369', '实训攻略', '2', 'com.ruoyi.web.controller.system.SysSxgl03Controller.accomplishSave()', 'POST', '1', 'admin', '研发部门', '/system/sxgl03/accomplish', '127.0.0.1', '内网IP', '{\r\n  \"id\" : [ \"23\" ],\r\n  \"名称\" : [ \"\" ],\r\n  \"分值\" : [ \"111247\" ]\r\n}', '1', 'nested exception is org.apache.ibatis.reflection.ReflectionException: There is no getter for property named \'studentName\' in \'class com.ruoyi.system.domain.SysSxgl03\'', '2019-09-25 16:41:24');
-INSERT INTO `sys_oper_log` VALUES ('370', '实训攻略', '2', 'com.ruoyi.web.controller.system.SysSxgl03Controller.accomplishSave()', 'POST', '1', 'admin', '研发部门', '/system/sxgl03/accomplish', '127.0.0.1', '内网IP', '{\r\n  \"id\" : [ \"23\" ],\r\n  \"名称\" : [ \"\" ],\r\n  \"分值\" : [ \"1111\" ]\r\n}', '1', 'nested exception is org.apache.ibatis.reflection.ReflectionException: There is no getter for property named \'studentName\' in \'class com.ruoyi.system.domain.SysSxgl03\'', '2019-09-25 16:41:30');
-INSERT INTO `sys_oper_log` VALUES ('371', '实训攻略', '2', 'com.ruoyi.web.controller.system.SysSxgl03Controller.accomplishSave()', 'POST', '1', 'admin', '研发部门', '/system/sxgl03/accomplish', '127.0.0.1', '内网IP', '{\r\n  \"id\" : [ \"22\" ],\r\n  \"名称\" : [ \"\" ],\r\n  \"分值\" : [ \"50222\" ]\r\n}', '1', 'nested exception is org.apache.ibatis.reflection.ReflectionException: There is no getter for property named \'studentName\' in \'class com.ruoyi.system.domain.SysSxgl03\'', '2019-09-25 16:42:55');
-INSERT INTO `sys_oper_log` VALUES ('372', '实训攻略', '2', 'com.ruoyi.web.controller.system.SysSxgl03Controller.accomplishSave()', 'POST', '1', 'admin', '研发部门', '/system/sxgl03/accomplish', '127.0.0.1', '内网IP', '{\r\n  \"id\" : [ \"22\" ],\r\n  \"名称\" : [ \"\" ],\r\n  \"分值\" : [ \"50222\" ]\r\n}', '1', 'nested exception is org.apache.ibatis.reflection.ReflectionException: There is no getter for property named \'studentName\' in \'class com.ruoyi.system.domain.SysSxgl03\'', '2019-09-25 16:43:07');
-INSERT INTO `sys_oper_log` VALUES ('373', '实训攻略', '2', 'com.ruoyi.web.controller.system.SysSxgl03Controller.accomplishSave()', 'POST', '1', 'admin', '研发部门', '/system/sxgl03/accomplish', '127.0.0.1', '内网IP', '{\r\n  \"id\" : [ \"23\" ],\r\n  \"名称\" : [ \"\" ],\r\n  \"分值\" : [ \"1111\" ]\r\n}', '1', 'nested exception is org.apache.ibatis.reflection.ReflectionException: There is no getter for property named \'studentName\' in \'class com.ruoyi.system.domain.SysSxgl03\'', '2019-09-25 16:43:19');
-INSERT INTO `sys_oper_log` VALUES ('374', '实训攻略', '2', 'com.ruoyi.web.controller.system.SysSxgl03Controller.accomplishSave()', 'POST', '1', 'admin', '研发部门', '/system/sxgl03/accomplish', '127.0.0.1', '内网IP', '{\r\n  \"id\" : [ \"22\" ],\r\n  \"名称\" : [ \"测试巷\" ],\r\n  \"分值\" : [ \"502\" ]\r\n}', '0', null, '2019-09-25 16:44:35');
-INSERT INTO `sys_oper_log` VALUES ('375', '实训攻略', '2', 'com.ruoyi.web.controller.system.SysSxgl03Controller.accomplishSave()', 'POST', '1', 'admin', '研发部门', '/system/sxgl03/accomplish', '127.0.0.1', '内网IP', '{\r\n  \"id\" : [ \"23\" ],\r\n  \"名称\" : [ \"\" ],\r\n  \"分值\" : [ \"11622\" ]\r\n}', '0', null, '2019-09-25 16:44:55');
-INSERT INTO `sys_oper_log` VALUES ('376', '实训攻略', '2', 'com.ruoyi.web.controller.system.SysSxgl03Controller.accomplishSave()', 'POST', '1', 'admin', '研发部门', '/system/sxgl03/accomplish', '127.0.0.1', '内网IP', '{\r\n  \"id\" : [ \"23\" ],\r\n  \"名称\" : [ \"\" ],\r\n  \"分值\" : [ \"1111\" ]\r\n}', '0', null, '2019-09-25 16:45:11');
-INSERT INTO `sys_oper_log` VALUES ('377', '实训攻略', '2', 'com.ruoyi.web.controller.system.SysSxgl03Controller.accomplishSave()', 'POST', '1', 'admin', '研发部门', '/system/sxgl03/accomplish', '127.0.0.1', '内网IP', '{\r\n  \"id\" : [ \"23\" ],\r\n  \"名称\" : [ \"\" ],\r\n  \"分值\" : [ \"9527\" ]\r\n}', '1', '\r\n### Error updating database.  Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'\' at line 2\r\n### The error may involve com.ruoyi.system.mapper.SysSxgl03Mapper.accomplishSysSxgl03-Inline\r\n### The error occurred while setting parameters\r\n### SQL: insert into sys_score          SET 分值\r\n### Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'\' at line 2\n; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'\' at line 2', '2019-09-25 16:46:23');
-INSERT INTO `sys_oper_log` VALUES ('378', '实训攻略', '2', 'com.ruoyi.web.controller.system.SysSxgl03Controller.accomplishSave()', 'POST', '1', 'admin', '研发部门', '/system/sxgl03/accomplish', '127.0.0.1', '内网IP', '{\r\n  \"id\" : [ \"23\" ],\r\n  \"名称\" : [ \"11\" ],\r\n  \"分值\" : [ \"11\" ]\r\n}', '1', '\r\n### Error updating database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column \'名称\' in \'field list\'\r\n### The error may involve com.ruoyi.system.mapper.SysSxgl03Mapper.accomplishSysSxgl03-Inline\r\n### The error occurred while setting parameters\r\n### SQL: insert into sys_score                ( 名称,                                                    分值 )           values ( ?,                                                    ? )\r\n### Cause: java.sql.SQLSyntaxErrorException: Unknown column \'名称\' in \'field list\'\n; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column \'名称\' in \'field list\'', '2019-09-25 16:47:58');
-INSERT INTO `sys_oper_log` VALUES ('379', '实训攻略', '2', 'com.ruoyi.web.controller.system.SysSxgl03Controller.accomplishSave()', 'POST', '1', 'admin', '研发部门', '/system/sxgl03/accomplish', '127.0.0.1', '内网IP', '{\r\n  \"id\" : [ \"23\" ],\r\n  \"名称\" : [ \"\" ],\r\n  \"分值\" : [ \"11111\" ]\r\n}', '0', null, '2019-09-25 16:48:03');
-INSERT INTO `sys_oper_log` VALUES ('380', '实训攻略', '2', 'com.ruoyi.web.controller.system.SysSxgl03Controller.accomplishSave()', 'POST', '1', 'admin', '研发部门', '/system/sxgl03/accomplish', '127.0.0.1', '内网IP', '{\r\n  \"id\" : [ \"23\" ],\r\n  \"名称\" : [ \"测试巷\" ],\r\n  \"分值\" : [ \"11\" ]\r\n}', '1', '\r\n### Error updating database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column \'名称\' in \'field list\'\r\n### The error may involve com.ruoyi.system.mapper.SysSxgl03Mapper.accomplishSysSxgl03-Inline\r\n### The error occurred while setting parameters\r\n### SQL: insert into sys_score                ( 名称,                                                    分值 )           values ( ?,                                                    ? )\r\n### Cause: java.sql.SQLSyntaxErrorException: Unknown column \'名称\' in \'field list\'\n; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column \'名称\' in \'field list\'', '2019-09-25 16:48:16');
-INSERT INTO `sys_oper_log` VALUES ('381', '实训攻略', '2', 'com.ruoyi.web.controller.system.SysSxgl03Controller.accomplishSave()', 'POST', '1', 'admin', '研发部门', '/system/sxgl03/accomplish', '127.0.0.1', '内网IP', '{\r\n  \"id\" : [ \"23\" ],\r\n  \"名称\" : [ \"\" ],\r\n  \"分值\" : [ \"9527\" ]\r\n}', '0', null, '2019-09-25 16:48:20');
-INSERT INTO `sys_oper_log` VALUES ('382', '实训攻略', '2', 'com.ruoyi.web.controller.system.SysSxgl03Controller.accomplishSave()', 'POST', '1', 'admin', '研发部门', '/system/sxgl03/accomplish', '127.0.0.1', '内网IP', '{\r\n  \"id\" : [ \"23\" ],\r\n  \"名称\" : [ \"\" ],\r\n  \"分值\" : [ \"23123\" ]\r\n}', '0', null, '2019-09-25 16:48:36');
-INSERT INTO `sys_oper_log` VALUES ('383', '实训攻略', '2', 'com.ruoyi.web.controller.system.SysSxgl03Controller.accomplishSave()', 'POST', '1', 'admin', '研发部门', '/system/sxgl03/accomplish', '127.0.0.1', '内网IP', '{\r\n  \"id\" : [ \"23\" ],\r\n  \"名称\" : [ \"\" ],\r\n  \"分值\" : [ \"250\" ]\r\n}', '0', null, '2019-09-25 16:51:14');
-INSERT INTO `sys_oper_log` VALUES ('384', '实训攻略', '2', 'com.ruoyi.web.controller.system.SysSxgl03Controller.accomplishSave()', 'POST', '1', 'admin', '研发部门', '/system/sxgl03/accomplish', '127.0.0.1', '内网IP', '{\r\n  \"id\" : [ \"2\" ],\r\n  \"名称\" : [ \"周任务\" ],\r\n  \"分值\" : [ \"50\" ]\r\n}', '1', '\r\n### Error updating database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column \'名称\' in \'field list\'\r\n### The error may involve com.ruoyi.system.mapper.SysSxgl03Mapper.accomplishSysSxgl03-Inline\r\n### The error occurred while setting parameters\r\n### SQL: insert into sys_score                ( 名称,                                                    分值 )           values ( ?,                                                    ? )\r\n### Cause: java.sql.SQLSyntaxErrorException: Unknown column \'名称\' in \'field list\'\n; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column \'名称\' in \'field list\'', '2019-09-25 16:51:36');
-INSERT INTO `sys_oper_log` VALUES ('385', '实训攻略', '2', 'com.ruoyi.web.controller.system.SysSxgl03Controller.accomplishSave()', 'POST', '1', 'admin', '研发部门', '/system/sxgl03/accomplish', '127.0.0.1', '内网IP', '{\r\n  \"id\" : [ \"2\" ],\r\n  \"名称\" : [ \"\" ],\r\n  \"分值\" : [ \"50\" ]\r\n}', '0', null, '2019-09-25 16:51:40');
 
 -- ----------------------------
--- Table structure for `sys_others`
+-- Table structure for sys_others
 -- ----------------------------
 DROP TABLE IF EXISTS `sys_others`;
 CREATE TABLE `sys_others` (
   `id` int(255) NOT NULL AUTO_INCREMENT,
-  `名称` varchar(255) DEFAULT NULL,
-  `内容` varchar(255) DEFAULT NULL,
-  `链接` text,
-  `类型` varchar(255) DEFAULT NULL,
-  `分值` varchar(255) DEFAULT NULL,
-  `模式` varchar(255) DEFAULT NULL,
+  `名称` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `内容` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `链接` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci,
+  `类型` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `分值` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `模式` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COMMENT='其他任务';
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='其他任务';
 
 -- ----------------------------
 -- Records of sys_others
@@ -1273,7 +1127,7 @@ CREATE TABLE `sys_others` (
 INSERT INTO `sys_others` VALUES ('1', 'Java每日小测', null, '<a href=\"https://ks.wjx.top/jq/45459462.aspx\">Java测试题</a>', null, '10', '个人');
 
 -- ----------------------------
--- Table structure for `sys_post`
+-- Table structure for sys_post
 -- ----------------------------
 DROP TABLE IF EXISTS `sys_post`;
 CREATE TABLE `sys_post` (
@@ -1299,7 +1153,7 @@ INSERT INTO `sys_post` VALUES ('3', 'hr', '人力资源', '3', '0', 'admin', '20
 INSERT INTO `sys_post` VALUES ('4', 'user', '普通员工', '4', '0', 'admin', '2018-03-16 11:33:00', 'ry', '2018-03-16 11:33:00', '');
 
 -- ----------------------------
--- Table structure for `sys_role`
+-- Table structure for sys_role
 -- ----------------------------
 DROP TABLE IF EXISTS `sys_role`;
 CREATE TABLE `sys_role` (
@@ -1316,7 +1170,7 @@ CREATE TABLE `sys_role` (
   `update_time` datetime DEFAULT NULL COMMENT '更新时间',
   `remark` varchar(500) DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`role_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='角色信息表';
+) ENGINE=InnoDB AUTO_INCREMENT=100 DEFAULT CHARSET=utf8 COMMENT='角色信息表';
 
 -- ----------------------------
 -- Records of sys_role
@@ -1325,7 +1179,7 @@ INSERT INTO `sys_role` VALUES ('1', '管理员', 'admin', '1', '1', '0', '0', 'a
 INSERT INTO `sys_role` VALUES ('2', '普通角色', 'common', '2', '2', '0', '0', 'admin', '2018-03-16 11:33:00', 'ry', '2018-03-16 11:33:00', '普通角色');
 
 -- ----------------------------
--- Table structure for `sys_role_dept`
+-- Table structure for sys_role_dept
 -- ----------------------------
 DROP TABLE IF EXISTS `sys_role_dept`;
 CREATE TABLE `sys_role_dept` (
@@ -1342,7 +1196,7 @@ INSERT INTO `sys_role_dept` VALUES ('2', '101');
 INSERT INTO `sys_role_dept` VALUES ('2', '105');
 
 -- ----------------------------
--- Table structure for `sys_role_menu`
+-- Table structure for sys_role_menu
 -- ----------------------------
 DROP TABLE IF EXISTS `sys_role_menu`;
 CREATE TABLE `sys_role_menu` (
@@ -1438,7 +1292,7 @@ INSERT INTO `sys_role_menu` VALUES ('2', '1059');
 INSERT INTO `sys_role_menu` VALUES ('2', '1060');
 
 -- ----------------------------
--- Table structure for `sys_score`
+-- Table structure for sys_score
 -- ----------------------------
 DROP TABLE IF EXISTS `sys_score`;
 CREATE TABLE `sys_score` (
@@ -1446,44 +1300,16 @@ CREATE TABLE `sys_score` (
   `student_name` varchar(255) DEFAULT NULL,
   `couse_name` varchar(255) DEFAULT NULL,
   `score` float(255,2) DEFAULT NULL,
-  `分值` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`student_id`),
-  KEY `分值` (`分值`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COMMENT='学生成绩表';
+  PRIMARY KEY (`student_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='学生成绩表';
 
 -- ----------------------------
 -- Records of sys_score
 -- ----------------------------
-INSERT INTO `sys_score` VALUES ('1', '林礼炜', '语文', '90.00', '1111');
-INSERT INTO `sys_score` VALUES ('2', '卢本伟', '语文', '125.00', '1111');
-INSERT INTO `sys_score` VALUES ('3', null, null, null, '11111');
-INSERT INTO `sys_score` VALUES ('4', null, null, null, '9527');
-INSERT INTO `sys_score` VALUES ('5', null, null, null, '23123');
-INSERT INTO `sys_score` VALUES ('6', null, null, null, '250');
-INSERT INTO `sys_score` VALUES ('7', null, null, null, '50');
+INSERT INTO `sys_score` VALUES ('1', '林礼炜', '语文', '90.00');
 
 -- ----------------------------
--- Table structure for `sys_sscore`
--- ----------------------------
-DROP TABLE IF EXISTS `sys_sscore`;
-CREATE TABLE `sys_sscore` (
-  `id` int(255) NOT NULL AUTO_INCREMENT,
-  `名称` varchar(255) DEFAULT NULL,
-  `内容` varchar(255) DEFAULT NULL,
-  `链接` text,
-  `类型` varchar(255) DEFAULT NULL,
-  `分值` varchar(255) DEFAULT NULL,
-  `模式` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COMMENT='实训攻略表';
-
--- ----------------------------
--- Records of sys_sscore
--- ----------------------------
-INSERT INTO `sys_sscore` VALUES ('5', '0', null, null, null, null, null);
-
--- ----------------------------
--- Table structure for `sys_sxgl`
+-- Table structure for sys_sxgl
 -- ----------------------------
 DROP TABLE IF EXISTS `sys_sxgl`;
 CREATE TABLE `sys_sxgl` (
@@ -1495,7 +1321,7 @@ CREATE TABLE `sys_sxgl` (
   `分值` varchar(255) DEFAULT NULL,
   `模式` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=utf8 COMMENT='实训攻略表';
+) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=utf8 COMMENT='实训攻略表';
 
 -- ----------------------------
 -- Records of sys_sxgl
@@ -1544,7 +1370,7 @@ INSERT INTO `sys_sxgl` VALUES ('42', '每日一文', '什么是大数据', '<a h
 INSERT INTO `sys_sxgl` VALUES ('43', '第六天', '1、专题日 本期分享学习渠道', null, null, '20', '团队');
 
 -- ----------------------------
--- Table structure for `sys_sxgl01`
+-- Table structure for sys_sxgl01
 -- ----------------------------
 DROP TABLE IF EXISTS `sys_sxgl01`;
 CREATE TABLE `sys_sxgl01` (
@@ -1556,7 +1382,7 @@ CREATE TABLE `sys_sxgl01` (
   `分值` varchar(255) DEFAULT NULL,
   `模式` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COMMENT='实训攻略表';
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8 COMMENT='实训攻略表';
 
 -- ----------------------------
 -- Records of sys_sxgl01
@@ -1578,7 +1404,7 @@ INSERT INTO `sys_sxgl01` VALUES ('15', '第五天', null, null, null, null, '个
 INSERT INTO `sys_sxgl01` VALUES ('16', '每日一文', '设计模式（将来你一定会遇到他）', '<a href=\"https://www.javazhiyin.com/41814.html\">点我</a>', null, '20', '个人');
 
 -- ----------------------------
--- Table structure for `sys_sxgl02`
+-- Table structure for sys_sxgl02
 -- ----------------------------
 DROP TABLE IF EXISTS `sys_sxgl02`;
 CREATE TABLE `sys_sxgl02` (
@@ -1609,7 +1435,7 @@ INSERT INTO `sys_sxgl02` VALUES ('12', '第五天', null, null, null, null, '个
 INSERT INTO `sys_sxgl02` VALUES ('13', '每日一文', '实验楼，在线学习，在线编程', '<a href=\"https://www.shiyanlou.com/\">点我</a>', null, '10', '个人');
 
 -- ----------------------------
--- Table structure for `sys_sxgl03`
+-- Table structure for sys_sxgl03
 -- ----------------------------
 DROP TABLE IF EXISTS `sys_sxgl03`;
 CREATE TABLE `sys_sxgl03` (
@@ -1621,12 +1447,12 @@ CREATE TABLE `sys_sxgl03` (
   `分值` varchar(255) DEFAULT NULL,
   `模式` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8 COMMENT='实训攻略表';
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8 COMMENT='实训攻略表';
 
 -- ----------------------------
 -- Records of sys_sxgl03
 -- ----------------------------
-INSERT INTO `sys_sxgl03` VALUES ('2', '周任务', '1、小组单位，掌握Linux的基本操作，需要具备基本的安装部署能力，具备部署项目能力； 2、小组单位，掌握VUE.JS的基本语法；', null, '自学能力', '50', '团队');
+INSERT INTO `sys_sxgl03` VALUES ('2', '周任务', '1、小组单位，掌握Linux的基本操作，需要具备基本的安装部署能力，具备部署项目能力； 2、小组单位，掌握VUE.JS的基本语法；', null, '自学能力', '50', '屯对');
 INSERT INTO `sys_sxgl03` VALUES ('3', '第一天', null, null, null, null, '个人');
 INSERT INTO `sys_sxgl03` VALUES ('4', '每日一文', 'w3school 大部分程序员的入门选择', '<a href=\"https://www.w3school.com.cn/\">点我</a>', null, '10', '个人');
 INSERT INTO `sys_sxgl03` VALUES ('5', '安装vm虚拟机', null, null, null, '20', '团队');
@@ -1645,11 +1471,9 @@ INSERT INTO `sys_sxgl03` VALUES ('17', '第四天', null, null, null, null, '个
 INSERT INTO `sys_sxgl03` VALUES ('18', '每日一文', '你不了解的hashMap', '<a title=\"试试鼠标滚轮呢？\" href=\"https://mp.weixin.qq.com/s/HzRH9ZJYmidzW5jrMvEi4w\">点我</a>', null, '10', '个人');
 INSERT INTO `sys_sxgl03` VALUES ('19', '第五天', null, null, null, null, '个人');
 INSERT INTO `sys_sxgl03` VALUES ('20', '每日一文', '简单的加法运算', '<a href=\"https://leetcode-cn.com/problems/add-two-numbers/\">点我</a>', '技术水平', '30', '个人');
-INSERT INTO `sys_sxgl03` VALUES ('22', '测试巷', '1', null, '自学能力', '502', '个人');
-INSERT INTO `sys_sxgl03` VALUES ('23', null, null, null, null, '11', null);
 
 -- ----------------------------
--- Table structure for `sys_user`
+-- Table structure for sys_user
 -- ----------------------------
 DROP TABLE IF EXISTS `sys_user`;
 CREATE TABLE `sys_user` (
@@ -1674,16 +1498,16 @@ CREATE TABLE `sys_user` (
   `update_time` datetime DEFAULT NULL COMMENT '更新时间',
   `remark` varchar(500) DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='用户信息表';
+) ENGINE=InnoDB AUTO_INCREMENT=100 DEFAULT CHARSET=utf8 COMMENT='用户信息表';
 
 -- ----------------------------
 -- Records of sys_user
 -- ----------------------------
-INSERT INTO `sys_user` VALUES ('1', '103', 'admin', '若依', '00', 'ry@163.com', '15888888888', '1', '', '29c67a30398638269fe600f73a054934', '111111', '0', '0', '127.0.0.1', '2019-09-25 16:58:53', 'admin', '2018-03-16 11:33:00', 'ry', '2019-09-25 16:58:53', '管理员');
+INSERT INTO `sys_user` VALUES ('1', '103', 'admin', '若依', '00', 'ry@163.com', '15888888888', '1', '', '29c67a30398638269fe600f73a054934', '111111', '0', '0', '127.0.0.1', '2019-09-23 17:03:27', 'admin', '2018-03-16 11:33:00', 'ry', '2019-09-23 17:03:26', '管理员');
 INSERT INTO `sys_user` VALUES ('2', '105', 'ry', '若依', '00', 'ry@qq.com', '15666666666', '1', '', '8e6d98b90472783cc73c17047ddccf36', '222222', '0', '0', '127.0.0.1', '2018-03-16 11:33:00', 'admin', '2018-03-16 11:33:00', 'ry', '2018-03-16 11:33:00', '测试员');
 
 -- ----------------------------
--- Table structure for `sys_user_online`
+-- Table structure for sys_user_online
 -- ----------------------------
 DROP TABLE IF EXISTS `sys_user_online`;
 CREATE TABLE `sys_user_online` (
@@ -1704,11 +1528,10 @@ CREATE TABLE `sys_user_online` (
 -- ----------------------------
 -- Records of sys_user_online
 -- ----------------------------
-INSERT INTO `sys_user_online` VALUES ('18dae7b1-df42-4ad3-9897-768b07b2ed72', 'admin', '研发部门', '127.0.0.1', '内网IP', 'Chrome', 'Windows 10', 'on_line', '2019-09-25 16:58:50', '2019-09-25 16:58:54', '1800000');
-INSERT INTO `sys_user_online` VALUES ('5279cc48-15e3-4a51-a839-9df813da73aa', 'admin', '研发部门', '127.0.0.1', '内网IP', 'Chrome', 'Windows 7', 'on_line', '2019-09-25 14:42:14', '2019-09-25 16:53:00', '1800000');
+INSERT INTO `sys_user_online` VALUES ('6a2391d5-1fd8-4477-8fa8-cdbb8e488c01', 'admin', '研发部门', '127.0.0.1', '内网IP', 'Chrome', 'Windows 10', 'on_line', '2019-09-23 17:03:23', '2019-09-23 17:17:48', '1800000');
 
 -- ----------------------------
--- Table structure for `sys_user_post`
+-- Table structure for sys_user_post
 -- ----------------------------
 DROP TABLE IF EXISTS `sys_user_post`;
 CREATE TABLE `sys_user_post` (
@@ -1724,7 +1547,7 @@ INSERT INTO `sys_user_post` VALUES ('1', '1');
 INSERT INTO `sys_user_post` VALUES ('2', '2');
 
 -- ----------------------------
--- Table structure for `sys_user_role`
+-- Table structure for sys_user_role
 -- ----------------------------
 DROP TABLE IF EXISTS `sys_user_role`;
 CREATE TABLE `sys_user_role` (
